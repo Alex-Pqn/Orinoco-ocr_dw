@@ -22,9 +22,16 @@
             margin: 0;
             font-size: 1.7em;
             margin-right: 25px;
+            padding-bottom: 2px;
             & a {
                 color: black; 
             }
+        }
+        &__on {
+            border-bottom: 3px solid black;
+        }
+        &__off  {
+
         }
     }
 }

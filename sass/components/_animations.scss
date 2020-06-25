@@ -1,0 +1,33 @@
+
+//Header
+.header {
+    & a {
+        &:hover {
+            color: black;
+        }
+    }
+    &__subtitles {
+        &__off {
+            border-bottom: 0px solid rgba(255, 255, 255, 0.3);
+            transition-property: border-bottom;
+            transition-duration: .1s;
+            &:hover {
+                border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+            }
+        }
+    }
+}
+
+//Index
+.products {
+    & img {
+        transition-property: all;
+        transition-duration: .2s;
+        transform: scale(1);
+        border-radius: 3px;
+        &:hover {
+            transform: scale(1.02);
+            border-radius: 10px;
+        }
+    }
+}
