@@ -30,6 +30,8 @@
         <meta name="twitter:title" content="Orinoco">
         <meta name="twitter:description" content="">
         <meta name="twitter:image:src" content="">
+        <!--CDN Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
         <!--Importations & Responsive-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +39,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
         <!--Icon & Style-->
-        <link rel="icon" href="">
+        <link rel="icon" href="/public/img/favicon.png">
         <meta name="theme-color" content="#5DC8A8">
         <title>Orinoco - Panier d'achats</title>
     </head>
@@ -50,7 +52,7 @@
                     <div class="row">
                         <div class="offset-lg-1 col-lg-7 header__title">
                             <h1>
-                                <a>
+                                <a href="index.html">
                                     ORINOCO
                                 </a>
                             </h1>
@@ -182,6 +184,12 @@
                                     </h5>
                                 </div>
                             </div>
+                        </article>
+                        <article class="col-lg-12">
+                            <button class="panier__recap__clear">
+                                <i class="fas fa-trash-alt"></i>
+                                Vider le panier
+                            </button>
                         </article>
                     </section>
                     <section class="panier__user-infos">

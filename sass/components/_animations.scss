@@ -38,13 +38,23 @@
         background-color: rgb(212, 212, 212);
         border: 2px solid rgba(0, 0, 0, 0.4);
         transition-property: all;
-        transition-duration: .3s;
+        transition-duration: .1s;
         color: black;
         transform: scale(1);
         &:hover {
             border-color: rgb(145, 145, 145);
             background-color: rgb(224, 224, 224);
             transform: scale(1.03);
+        }
+    }
+    &__recap {
+        &__clear {
+            color: rgba(0, 0, 0, 0.75);
+            border: 2px solid rgba(0, 0, 0, 0.12);
+            &:hover {
+                border-width: 3px;
+                color: rgb(0, 0, 0);
+            }
         }
     }
 
