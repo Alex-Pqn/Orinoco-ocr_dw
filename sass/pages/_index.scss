@@ -1,0 +1,49 @@
+
+.pres {
+    background-color: rgb(80, 80, 80);
+    padding: 25px;
+    &__bloc-title {
+        position: absolute;
+        width: 100%;
+        margin-top: 150px;
+        z-index: 2;
+    }
+    & img {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        opacity: .8;
+    }
+    & h3 {
+        font-size: 2.3em;
+        color: rgba(255, 255, 255, 0.89);
+    }
+    & h4 {
+        font-size: 1.7em;
+        color: rgba(255, 255, 255, 0.603);
+    }
+}
+
+.products {
+    background-color: rgb(228, 228, 228);
+    & img {
+        margin: 0 10px 20px 10px;
+        box-shadow: 0 0 10px black;
+    }
+    & h3 {
+        margin-top: 45px;
+        font-size: 2.7em;
+        & span {
+            padding-bottom: 3px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+        }
+    }
+    & h4 {
+        opacity: .9;
+        margin-top: 45px;
+        margin-bottom: 25px;
+    }
+    &__end {
+        margin-bottom: 45px;
+    }
+}
