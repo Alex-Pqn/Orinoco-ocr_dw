@@ -1,0 +1,9 @@
+
+footer {
+    padding: 15px;
+    background-color: rgb(153, 153, 153);
+    & p {
+        margin: 0;
+        color: black;
+    }
+}
