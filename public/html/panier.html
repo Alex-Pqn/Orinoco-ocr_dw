@@ -39,7 +39,7 @@
         <!--Icon & Style-->
         <link rel="icon" href="">
         <meta name="theme-color" content="#5DC8A8">
-        <title>Orinoco - Commerce en ligne</title>
+        <title>Orinoco - Panier d'achats</title>
     </head>
     <body>
         <main class="container">
@@ -80,14 +80,199 @@
                 <section class="col-lg-12 pres text-center">
                     <div class="pres__bloc-title">
                         <h3>
-                            Votre site d'achats en ligne !
+                            <span>
+                                Votre site d'achats en ligne !
+                            </span>
                         </h3>
                         <h4>
-                            Matériel de photographie, accessoires et meubles
+                            Matériel photographique, accessoires et meubles
                         </h4>
                     </div>
                     <img src="/public/img/photographie.png" width="100%" height="" alt="">
                 </section>
+
+                <!--Panier-->
+                <div class="col-lg-12 panier text-center">
+                    <section class="row panier__recap">
+                        <div class="col-lg-12 panier__recap__title">
+                            <h3>
+                                <span>
+                                    Récapitulatif de votre commande
+                                </span>
+                            </h3>
+                        </div>
+                        <article class="col-lg-12 panier__recap__infos">
+                            <div class="row">
+                                <div class="offset-lg-3 col-lg-3">
+                                    <h4>
+                                        Produit
+                                    </h4>
+                                </div>
+                                <div class="offset-lg-1 col-lg-5 text-left">
+                                    <h4>
+                                        Prix
+                                    </h4>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-lg-12">
+                            <div class="row">
+                                <div class="offset-lg-3 col-lg-3">
+                                    <p>
+                                        Produit 1
+                                    </p>
+                                </div>
+                                <div class="offset-lg-1 col-lg-5 text-left">
+                                    <p>
+                                        <span>
+                                            10
+                                        </span>
+                                        €
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-lg-12">
+                            <div class="row">
+                                <div class="offset-lg-3 col-lg-3">
+                                    <p>
+                                        Produit 2
+                                    </p>
+                                </div>
+                                <div class="offset-lg-1 col-lg-5 text-left">
+                                    <p>
+                                        <span>
+                                            10
+                                        </span>
+                                        €
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-lg-12">
+                            <div class="row">
+                                <div class="offset-lg-3 col-lg-3">
+                                    <p>
+                                        Produit 3
+                                    </p>
+                                </div>
+                                <div class="offset-lg-1 col-lg-5 text-left">
+                                    <p>
+                                        <span>
+                                            10
+                                        </span>
+                                        €
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-lg-12 panier__recap__total-price">
+                            <div class="row align-items-center">
+                                <div class="offset-lg-3 col-lg-3 align-center">
+                                    <h5>
+                                        Prix total
+                                    </h5>
+                                </div>
+                                <div class="offset-lg-1 col-lg-5 text-left">
+                                    <h5>
+                                        <span>
+                                            30
+                                        </span>
+                                        €
+                                    </h5>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                    <section class="panier__user-infos">
+                        <div class="col-lg-12 panier__user-infos__title">
+                            <h3>
+                                <span>
+                                    Vos coordonnées
+                                </span>
+                            </h3>
+                        </div>
+                        <form action="" method="get" class="col-lg-12 panier__user-infos__form">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row align-items-center">
+                                        <div class="offset-lg-2 col-lg-3 text-right">
+                                            <label for="name">
+                                                Nom : 
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-7 text-left">
+                                            <input type="text" name="name" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row text-left align-items-center">
+                                        <div class="offset-lg-2 col-lg-3 text-right">
+                                            <label for="name">
+                                                Prénom : 
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-7 text-left">
+                                            <input type="text" name="name" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row text-left align-items-center">
+                                        <div class="offset-lg-2 col-lg-3 text-right">
+                                            <label for="email">
+                                                Email : 
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-7 text-left">
+                                            <input type="email" name="email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row text-left align-items-center">
+                                        <div class="offset-lg-2 col-lg-3 text-right">
+                                            <label for="name">
+                                                Adresse : 
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-7 text-left">
+                                            <input type="text" name="adress" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row text-left align-items-center">
+                                        <div class="offset-lg-2 col-lg-3 text-right">
+                                            <label for="name">
+                                                Code postal : 
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-7 text-left">
+                                            <input type="text" name="postal" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row text-left align-items-center">
+                                        <div class="offset-lg-2 col-lg-3 text-right">
+                                            <label for="name">
+                                                Ville : 
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-7 text-left">
+                                            <input type="text" name="city" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 panier__user-infos__form__btn-submit">
+                                    <input id="btn-submit-panier" type="submit" value="Valider ma commande">
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
 
                 <!--Footer-->
                 <footer class="col-lg-12 text-center">

@@ -1,7 +1,9 @@
 
 footer {
     padding: 15px;
-    background-color: rgb(153, 153, 153);
+    background-color: $backgrnd-color-h-f;
+    border-bottom: 8px solid $border-color-prdcts;
+    border-top: 8px solid $border-color-prdcts;
     & p {
         margin: 0;
         color: black;

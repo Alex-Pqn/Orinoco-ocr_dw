@@ -1,7 +1,8 @@
 
 .pres {
     background-color: rgb(80, 80, 80);
-    padding: 25px;
+    border-bottom: 8px solid $border-color-prdcts;
+    padding: 40px;
     &__bloc-title {
         position: absolute;
         width: 100%;
@@ -12,20 +13,26 @@
         position: relative;
         width: 100%;
         z-index: 1;
-        opacity: .8;
+        border: 3px solid rgba(216, 216, 216, 0.8);
     }
     & h3 {
         font-size: 2.3em;
-        color: rgba(255, 255, 255, 0.89);
+        color: rgba(236, 236, 236, 0.89);
+        & span {
+            background-color: rgba(209, 209, 209, 0.2);
+            padding: 7px 20px;
+            text-shadow: 0 0 15px black;
+        }
     }
     & h4 {
+        padding-top: 10px;
         font-size: 1.7em;
-        color: rgba(255, 255, 255, 0.603);
+        color: rgba(255, 255, 255, 0.5);
     }
 }
 
 .products {
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(236, 236, 236);
     & img {
         margin: 0 15px 25px 15px;
         box-shadow: 0 0 10px black;

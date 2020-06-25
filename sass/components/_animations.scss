@@ -8,11 +8,11 @@
     }
     &__subtitles {
         &__off {
-            border-bottom: 0px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 0px solid rgba(255, 255, 255, 0.4);
             transition-property: border-bottom;
             transition-duration: .1s;
             &:hover {
-                border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+                border-bottom: 3px solid rgba(255, 255, 255, 0.4);
             }
         }
     }
@@ -30,4 +30,22 @@
             border-radius: 10px;
         }
     }
+}
+
+//Panier
+.panier {
+    #btn-submit-panier {
+        background-color: rgb(212, 212, 212);
+        border: 2px solid rgba(0, 0, 0, 0.4);
+        transition-property: all;
+        transition-duration: .3s;
+        color: black;
+        transform: scale(1);
+        &:hover {
+            border-color: rgb(145, 145, 145);
+            background-color: rgb(224, 224, 224);
+            transform: scale(1.03);
+        }
+    }
+
 }
