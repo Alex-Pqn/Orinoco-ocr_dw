@@ -1,0 +1,73 @@
+
+.panier {
+    margin-top: 25px;
+    margin-bottom: 50px;
+
+    &__recap {
+        &__title {
+            margin-top: 25px;
+            margin-bottom: 20px;
+            & h3 {
+                font-size: 2em;
+                & span {
+                    padding-bottom: 3px;
+                    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+        & p {
+            font-size: 1.2em;
+        }
+        &__infos {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        &__total-price {
+            & h5 {
+                font-size: 1.3em;
+                margin: 0;
+            }
+            margin-top: 3px;
+            padding: 15px;
+            background-color: rgb(240, 240, 240);
+        }
+    }
+    &__user-infos {
+
+        &__title {
+            padding-top: 20px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            & h3 {
+                font-size: 2em;
+                & span {
+                    padding-bottom: 3px;
+                    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+        &__form {
+            padding: 25px;
+            & p {
+                font-size: 1.1em;
+                line-height: 40px;
+            }
+            & label {
+                text-align: left;
+                margin: 0;
+            }
+            & input {
+                width: 260px;
+                height: 32px;
+                margin: 5px;
+                border: 1.5px solid rgba(0, 0, 0, 0.4);
+                padding-left: 10px;
+                font-size: .87em;
+                color: rgb(71, 71, 71);
+            }
+            &__btn-submit {
+                margin-top: 25px;
+            }
+        }
+    }
+}
