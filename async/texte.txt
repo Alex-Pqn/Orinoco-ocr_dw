@@ -1,0 +1,1 @@
+Le site retourne actuellement le statut HTTP 200 et l'état 4 du readyState.
