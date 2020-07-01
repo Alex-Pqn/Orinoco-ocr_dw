@@ -33,6 +33,7 @@
 
 .products {
     background-color: rgb(236, 236, 236);
+    padding-bottom: 40px;
     & img {
         margin: 0 15px 25px 15px;
         box-shadow: 0 0 10px black;
@@ -49,8 +50,5 @@
         opacity: .9;
         margin-top: 45px;
         margin-bottom: 25px;
-    }
-    &__end {
-        margin-bottom: 45px;
     }
 }
