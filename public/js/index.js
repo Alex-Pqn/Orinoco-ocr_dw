@@ -1,11 +1,10 @@
 
-// let demo = document.getElementById("demo");
-let xhr = new XMLHttpRequest(); //Creation HML HTTP REQUEST
+let xhr = new XMLHttpRequest(); //Creation XML HTTP REQUEST
 
 xhr.onreadystatechange = function() {
     console.log(this);
     if (this.readyState == 4 && this.status == 200) {
-        console.log(this.response) //return content file text.txt
+        console.log(this.response) //return response API
 
     } else if (this.status != 200 && this.status != 0) {
         alert("Malheureuseument, l'API Camera n'a pas pu être récupérée...");
