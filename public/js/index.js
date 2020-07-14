@@ -1,10 +1,4 @@
 
-// declaration variables
-let prdctImageUrl = document.querySelector("article.dyn-products__img");
-let prdctTitle = document.getElementById("dyn-products__name");
-let prdctDescription = document.getElementById("dyn-products__desc");
-let prdctPrice = document.getElementById("dyn-products__price");
-let prdctdLenses = document.getElementById("dyn-products__lenses");
 
 // CALL, REQUESTS API - GET
 // => http://localhost:3000/api/cameras/
@@ -15,44 +9,66 @@ const apiProducts = async function () {
     xhr.responseType = "json"; // request type modify
     xhr.send(); // send request
     console.log(this); //return requests
-    xhr.onreadystatechange = function() { // requests checker
+    xhr.onerror;
+    xhr.onreadystatechange = function() {
         console.log(this);
-        if (this.readyState == 4 && this.status == 200 && xhr.DONE) {
+        if (this.readyState === 4 && this.status === 200 && xhr.DONE) {
             let data = this.response;
-            console.log(data)
-            for (i = 0; i < data.length; i++) {
-                function displayContent () { // function containing my products (for display)
-                    const product = function (description, imageUrl, lenses, title, price, id) {
-                        this.id = id;
-                        this.imageUrl = imageUrl;
-                        this.title = title;
-                        this.description = description;
-                        this.price = price;
-                        this.lenses = lenses;
-                    }
-                    const cameras = new product (
-                        data[i]._id,
-                        data[i]._imageUrl,
-                        data[i]._title,
-                        data[i]._description,
-                        data[i]._price,
-                        data[i]._lenses,
-                    )
-                    // imageUrl.setAttribute("src", "./public/img/vcam_1.jpg")
-                    prdctImageUrl.setAttribute("src", product.imageUrl)
-                    prdctTitle.textContent = (product.title);
-                    prdctDescription.textContent = (product.description);
-                    prdctPrice.textContent = (product.price);
-                    prdctdLenses.textContent = (product.lenses);
-                }
-                displayContent();
+            const cameras = data;
+
+            for (i = 0; i < cameras.length; i++) {
+                idContent = cameras[i]._id;
+                imageUrlContent = cameras[i].imageUrl;
+                nameContent = cameras[i].name;
+                descriptionContent = cameras[i].description;
+                lensesContent = cameras[i].lenses;
+                pricesContent = cameras[i].price;
+                createArticle()
             }
-    
-        } else if (this.status != 200 && this.status != 0) {
-            alert("l'API Camera n'a malheureusement pas pu être récupérée...");
-            alert("Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
-            alert("Veuillez réessayer ultérieurement.")
-        }
+
+        } else if (this.status !== 200 && this.status !== 0) {
+            alert("l'API 'Camera products' n'a malheureusement pas pu être récupérée... Veuillez réessayer ultérieurement.");
+            console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
+        };
     };
 }
 apiProducts();
+
+function createArticle() {
+    //Elements creation
+    let main = document.querySelector(".products__list")
+    let article = document.createElement("article");
+    let imageUrl = document.createElement("img");
+    let name = document.createElement("h5");
+    let description = document.createElement("p");
+    let lenses = document.createElement("p");
+    let price = document.createElement("p");
+    let buttonHref = document.createElement("a");
+    let button = document.createElement("button");
+    //Elements content
+    imageUrl.src = imageUrlContent;
+    let nameText = document.createTextNode(nameContent)
+    let descriptionText = document.createTextNode(descriptionContent)
+    let lensesText = document.createTextNode("Types de lentilles disponibles : " + lensesContent)
+    let priceText = document.createTextNode("Prix : " + pricesContent + " €")
+    let buttonText = document.createTextNode("Commander");
+    buttonHref.href = "product.html?id="+idContent;
+    //Classnames creation
+    description.className = "products__list__desc"
+    lenses.className = "products__list__lenses"
+    price.className = "products__list__price"
+    //Parents, childs
+    name.appendChild(nameText);
+    description.appendChild(descriptionText);
+    price.appendChild(priceText);
+    lenses.appendChild(lensesText);
+    buttonHref.appendChild(button);
+    button.appendChild(buttonText);
+    main.appendChild(article);
+    article.appendChild(name);
+    article.appendChild(imageUrl);
+    article.appendChild(description);
+    article.appendChild(lenses);
+    article.appendChild(price);
+    article.appendChild(buttonHref);
+}

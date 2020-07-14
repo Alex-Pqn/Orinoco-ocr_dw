@@ -41,7 +41,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <!--Icon & Style-->
-        <link rel="icon" href="./public/img/favicon.png">
+        <link rel="icon" href="images/favicon.png">
         <meta name="theme-color" content="#5DC8A8">
         <title>Orinoco - Votre produit</title>
     </head>
@@ -91,41 +91,37 @@
                             Matériel photographique, accessoires et meubles
                         </h4>
                     </div>
-                    <img src="./public/img/photographie.png" width="100%" height="" alt="">
+                    <img src="images/photographie.png" width="100%" height="" alt="">
                 </section>
 
-                <!--Dynamic personnalisation product-->
-                <article class="col-lg-12 dyn-products text-center">
-                    <img id="dyn-products__img" class="dyn-products__img" width="350" src="">
+                <!--Dynamic Javascript Content in <span>-->
+                <article class="col-lg-12 products-order text-center">
                     <h4>
-                        Vous êtes sur le point de commander :
-                        <span id="dyn-products__name">
-                            à remplir
-                        </span>
+                        Vous êtes sur le point d'ajouter à votre panier :
+                        <span id="products-order__name"></span>
                     </h4>
-                    <p>
-                        Description du produit :
-                        <span id="dyn-products__desc">
-                            à remplir
-                        </span>
+                    <img id="products-order__img">
+                    <p class="products-order__desc-bloc">
+                        Description du produit
+                        <br>
+                        <span id="products-order__desc"></span>
                     </p>
-                    <p>
-                      Prix :
-                      <strong>
-                        <span id="dyn-products__price">
-                            à remplir
-                        </span>
-                      </strong>
-                      €
+                    <p class="products-order__custom-bloc">
+                        Personnalisation
+                        <br>
+                        <form>
+                            <select name="custom" size="1">
+                                <option id="products-order__custom">
+                                </option>
+                            </select>
+                        </form>
                     </p>
-                    <p>
-                        Types de lentilles de l'appareil :
-                        <strong>
-                            <span id="dyn-products__lenses">
-                                à remplir
-                            </span>
-                        </strong>
+                    <p class="products-order__price-bloc">
+                        Prix :
+                        <span id="products-order__price"></span>
+                        €
                     </p>
+                    <button>Ajouter à mon panier</button>
                 </article>
                 <!--Footer-->
                 <footer class="col-lg-12 text-center">
@@ -135,6 +131,6 @@
                 </footer>
             </div>
         </main>
-        <script src="./public/js/index.js"></script>
+        <script src="./public/js/products.js"></script>
     </body>
 </html>
