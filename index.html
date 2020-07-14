@@ -41,7 +41,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <!--Icon & Style-->
-        <link rel="icon" href="./public/img/favicon.png">
+        <link rel="icon" href="images/favicon.png">
         <meta name="theme-color" content="#5DC8A8">
         <title>Orinoco - Votre site d'achats en ligne !</title>
     </head>
@@ -91,7 +91,7 @@
                             Matériel photographique, accessoires et meubles
                         </h4>
                     </div>
-                    <img src="./public/img/photographie.png" width="100%" height="" alt="">
+                    <img src="images/photographie.png" width="100%" height="" alt="">
                 </section>
 
                 <!--Products-->
@@ -102,34 +102,15 @@
                         </span>
                     </h3>
                     <div class="row">
-                        <article class="col-lg-12">
+                        <div class="col-lg-12">
                             <h4>
                                 <span>
                                     Caméras Vintage
                                 </span>
                             </h4>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <a id="cam_vtg_1" onclick="JsRedirect()">
-                                        <img src="./public/img/vcam_1.jpg" height="" width="25%" alt="">
-                                    </a>
-                                    <a id="cam_vtg_2" onclick="JsRedirect()">
-                                        <img src="./public/img/vcam_2.jpg" height="" width="25%" alt="">
-                                    </a>
-                                    <a id="cam_vtg_3" onclick="JsRedirect()">
-                                        <img src="./public/img/vcam_3.jpg" height="" width="25%" alt="">
-                                    </a>
-                                </div>
-                                <div class="col-lg-12">
-                                    <a id="cam_vtg_4" onclick="JsRedirect()">
-                                        <img src="./public/img/vcam_4.jpg" height="" width="25%" alt="">
-                                    </a>
-                                    <a id="cam_vtg_5" onclick="JsRedirect()">
-                                        <img src="./public/img/vcam_5.jpg" height="" width="25%" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
+                            <!--Dynamic Javascript Content-->
+                            <div class="products__list"></div>
+                        </div>
                     </div>
                 </section>
                 <!--Footer-->
