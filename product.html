@@ -37,8 +37,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="./public/css/prefixed/style.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <!--Icon & Style-->
         <link rel="icon" href="images/favicon.png">
@@ -95,27 +93,27 @@
                 </section>
 
                 <!--Dynamic Javascript Content in <span> & <select>-->
-                <article class="col-lg-12 products-order text-center">
+                <article class="col-lg-12 products text-center">
                     <h4>
                         Vous êtes sur le point d'ajouter à votre panier :
-                        <span id="products-order__name"></span>
+                        <span id="products__name"></span>
                     </h4>
-                    <img id="products-order__img">
-                    <p class="products-order__desc-bloc">
+                    <img id="products__img">
+                    <p class="products__desc-bloc">
                         Description du produit
                         <br>
-                        <span id="products-order__desc"></span>
+                        <span id="products__desc"></span>
                     </p>
-                    <p class="products-order__custom-bloc">
+                    <p class="products__custom">
                         Personnalisation
                         <br>
                         <form>
-                            <select class="custom" name="custom" size="1"></select>
+                            <select class="products__custom__select" name="custom" size="1"></select>
                         </form>
                     </p>
-                    <p class="products-order__price-bloc">
+                    <p class="products__price-bloc">
                         Prix :
-                        <span id="products-order__price"></span>
+                        <span id="products__price"></span>
                         €
                     </p>
                     <button>Ajouter à mon panier</button>

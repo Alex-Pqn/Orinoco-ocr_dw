@@ -1,6 +1,7 @@
 
 //Product page
-.products-order {
+
+.products {
     background-color: rgba(216, 216, 216, 0.8);
     padding: 32px 0 40px 0;
 
@@ -28,13 +29,20 @@
             color: rgba(0, 0, 0, 0.68);
         }
     }
-    &__custom-bloc {
+    &__custom {
         font-size: 1.15em;
         color: black;
         margin-bottom: 8px;
         & span {
             font-size: .85em;
             color: rgba(0, 0, 0, 0.68);
+        }
+        &__select {
+            border-radius: 5px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.05);
+            font-size: 1.1em;
+            padding: .25em;
         }
     }
     &__price-bloc {
