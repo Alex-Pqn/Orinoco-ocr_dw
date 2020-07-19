@@ -19,14 +19,12 @@ const apiProducts = async function () {
         if (apiStatutReady) { // if API is ready
             const cameras = this.response; // store API content in "cameras" const
 
-            console.log(cameras)
-
             try { // recover url "?id=" parameter and store in const "id"
                 let url_string = (window.location.href).toLowerCase();
                 let url = new URL(url_string);
                 const id = url.searchParams.get("id");
 
-                for (i = 0; i < cameras.length; i++) {
+                for (let i = 0; i < cameras.length; i++) {
                     if (id === cameras[i]._id) { // if an id in the API is matched with the id in the url parameter
                         foundUrl = true;
                         orderProduct( // store the API content in a function called below
@@ -58,23 +56,22 @@ const apiProducts = async function () {
 apiProducts();
 
 function customList(lenses) {
-    for (i = 0; i < lenses.length; i++) {
-        console.log(lenses[i])
-        let custom = document.querySelector(".custom")
+    lenses.forEach((lensesContent) => {
+        let custom = document.querySelector(".products__custom__select")
         let option = document.createElement("option");
-        option.id = "products-order__custom"
-        option.textContent = lenses[i];
+        option.className = ".products__custom__select__option"
+        option.textContent = lensesContent;
         custom.appendChild(option);
-    }
+    });
 }
 
 function orderProduct (imageUrl, name, description, price) {
     //Call id's in "product" page
-    let prdctImageUrl = document.getElementById("products-order__img");
-    let prdctName = document.getElementById("products-order__name");
-    let prdctDescription = document.getElementById("products-order__desc");
-    let prdctPrice = document.getElementById("products-order__price");
-    // let prdctCustom = document.getElementById("products-order__custom");
+    let prdctImageUrl = document.getElementById("products__img");
+    let prdctName = document.getElementById("products__name");
+    let prdctDescription = document.getElementById("products__desc");
+    let prdctPrice = document.getElementById("products__price");
+    // let prdctCustom = document.getElementById("products__custom");
     //Display the content according to url parameter
     prdctImageUrl.src = imageUrl;
     prdctName.textContent = '"' + name + '"';

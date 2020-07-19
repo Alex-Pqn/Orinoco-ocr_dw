@@ -17,7 +17,7 @@ const apiProducts = async function () {
         if (apiStatutReady) { // if API is ready
             const cameras = this.response; // store API content in "cameras" const
 
-            for (i = 0; i < cameras.length; i++) {
+            for (let i = 0; i < cameras.length; i++) {
                 createArticle( // store the API content in a function called below
                     cameras[i]._id,
                     cameras[i].imageUrl,
