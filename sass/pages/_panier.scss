@@ -1,5 +1,19 @@
 
 //Panier page
+
+.error-empty {
+    display: none;
+    margin: 35px;
+    text-align: center;
+    & h3 {
+        font-size: 2.2em;
+    }
+    & p {
+        font-size: 1.5em;
+        margin-top: 15px;
+    }
+}
+
 .panier {
     margin-top: 25px;
     margin-bottom: 50px;
@@ -22,6 +36,18 @@
         &__infos {
             margin-top: 10px;
             margin-bottom: 15px;
+            & div {
+                padding: 0;
+            }
+        }
+        &__products {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            &__container {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
         }
         &__total-price {
             & h5 {
