@@ -1,10 +1,12 @@
 
+const url = "http://localhost:3000/api/cameras/"
+
 // CALL, REQUESTS API - GET
 // => http://localhost:3000/api/cameras/
 
 const apiProducts = async function () {
     let xhr = new XMLHttpRequest(); // XHR creation
-    xhr.open("GET", "http://localhost:3000/api/cameras/", true); // request method & url
+    xhr.open("GET", url, true); // request method & url
     xhr.responseType = "json"; // request type modify
     xhr.send(); // send request
     console.log(this);

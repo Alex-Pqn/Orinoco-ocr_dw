@@ -73,6 +73,9 @@
                                         </a>
                                     </h2>
                                 </li>
+                                <!--Dynamic Javascript Content-->
+                                <li class="header__subtitles__total-orders"></li>
+                                <!--Dynamic Javascript Content END-->
                             </ul>
                         </div>
                     </div>
@@ -94,6 +97,20 @@
                 </section>
 
                 <!--Panier-->
+                <article class="col-lg-12 error-empty">
+                    <h3>
+                        Oops, une erreur s'est produite !
+                    </h3>
+                    <p>
+                        Votre panier semble vide...
+                    </p>
+                    <p>
+                        <a href="index.html">
+                            Cliquez ici
+                        </a> 
+                        pour ajouter dès maintenant un produit :D
+                    </p>
+                </article>
                 <div class="col-lg-12 panier text-center">
                     <section class="row panier__recap">
                         <div class="col-lg-12 panier__recap__title">
@@ -105,69 +122,33 @@
                         </div>
                         <article class="col-lg-12 panier__recap__infos">
                             <div class="row">
-                                <div class="offset-lg-3 col-lg-3">
+                                <div class="offset-lg-2 col-lg-2 text-left">
                                     <h4>
                                         Produit
                                     </h4>
                                 </div>
-                                <div class="offset-lg-1 col-lg-5 text-left">
+                                <div class="offset-lg-1 col-lg-3 text-left">
+                                    <h4>
+                                        <span>
+                                            Personnalisation
+                                        </span>
+                                    </h4>
+                                </div>
+                                <div class="offset-lg-1 col-lg-1 text-left">
                                     <h4>
                                         Prix
                                     </h4>
                                 </div>
                             </div>
                         </article>
+                        
                         <article class="col-lg-12">
-                            <div class="row">
-                                <div class="offset-lg-3 col-lg-3">
-                                    <p>
-                                        Produit 1
-                                    </p>
-                                </div>
-                                <div class="offset-lg-1 col-lg-5 text-left">
-                                    <p>
-                                        <span>
-                                            10
-                                        </span>
-                                        €
-                                    </p>
-                                </div>
+                            <!--Dynamic Javascript Content-->
+                            <div class="row panier__recap__products">
                             </div>
+                            <!--Dynamic Javascript Content END-->
                         </article>
-                        <article class="col-lg-12">
-                            <div class="row">
-                                <div class="offset-lg-3 col-lg-3">
-                                    <p>
-                                        Produit 2
-                                    </p>
-                                </div>
-                                <div class="offset-lg-1 col-lg-5 text-left">
-                                    <p>
-                                        <span>
-                                            10
-                                        </span>
-                                        €
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="col-lg-12">
-                            <div class="row">
-                                <div class="offset-lg-3 col-lg-3">
-                                    <p>
-                                        Produit 3
-                                    </p>
-                                </div>
-                                <div class="offset-lg-1 col-lg-5 text-left">
-                                    <p>
-                                        <span>
-                                            10
-                                        </span>
-                                        €
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
+
                         <article class="col-lg-12 panier__recap__total-price">
                             <div class="row align-items-center">
                                 <div class="offset-lg-3 col-lg-3 align-center">
@@ -177,9 +158,9 @@
                                 </div>
                                 <div class="offset-lg-1 col-lg-5 text-left">
                                     <h5>
-                                        <span>
-                                            30
-                                        </span>
+                                        <!--Dynamic Javascript Content-->
+                                        <span></span>
+                                        <!--Dynamic Javascript END-->
                                         €
                                     </h5>
                                 </div>
@@ -270,5 +251,7 @@
                 </footer>
             </div>
         </main>
+        <script src="./public/js/panier.js"></script>
+        <script src="./public/js/totalProducts.js"></script>
     </body>
 </html>
