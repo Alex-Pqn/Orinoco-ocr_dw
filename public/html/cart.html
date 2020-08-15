@@ -16,14 +16,14 @@
         <!--Global Meta-->
         <meta name="description" content="">
         <meta name="robots" content="index,follow">
-        <!--OG:Facebook-->
+        <!--Opengraph-->
         <meta property="og:site_name" content="Orinoco">
         <meta property="og:title" content="">
         <meta property="og:description" content="">
         <meta property="og:url" content="">
         <meta property="og:image" content="image/png">
         <meta property="og:image:type" content="image/png">
-        <!--Twitter-->
+        <!--Twitter cards-->
         <meta name="twitter:site" content="Orinoco">
         <meta name="twitter:creator" content="Orinoco">
         <meta name="twitter:card" content="summary_large_image">
@@ -35,11 +35,11 @@
         <!--Importations & Responsive-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./public/css/prefixed/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/css/prefixed/style.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
         <!--Icon & Style-->
-        <link rel="icon" href="images/favicon.png">
+        <link rel="icon" href="../img/favicon.png">
         <meta name="theme-color" content="#5DC8A8">
         <title>Orinoco - Panier d'achats</title>
     </head>
@@ -49,35 +49,53 @@
 
                 <!--Header-->
                 <header class="col-lg-12 header">
-                    <div class="row">
-                        <div class="offset-lg-1 col-lg-7 header__title">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 header__title">
                             <h1>
-                                <a href="index.html">
+                                <a href="./../../index.html">
                                     ORINOCO
                                 </a>
                             </h1>
                         </div>
-                        <div class="col-lg-4 header__subtitles">
+                        <div class="col-lg-4 header__search">
+                            <label for="search">
+                                <i class="fas fa-search"></i>
+                            </label>
+                            <input maxlength="25" placeholder="Rechercher dans notre catalogue" size="35" name="search">
+                        </div>
+                        <nav class="col-lg-5 header__subtitles">
                             <ul class="row">
                                 <li>
                                     <h2 class="header__subtitles__off">
-                                        <a href="index.html">
+                                        <a href="./../../index.html">
                                             Accueil
                                         </a>
                                     </h2>
                                 </li>
                                 <li>
-                                    <h2 class="header__subtitles__on">
+                                    <h2 class="header__subtitles__off">
                                         <a href="">
-                                            Panier
+                                            Blog
                                         </a>
                                     </h2>
                                 </li>
-                                <!--Dynamic Javascript Content-->
-                                <li class="header__subtitles__total-orders"></li>
-                                <!--Dynamic Javascript Content END-->
+                                <li>
+                                    <h2 class="header__subtitles__off">
+                                        <a href="">
+                                            Contact
+                                        </a>
+                                    </h2>
+                                </li>
+                                <li class="row header__subtitles__cart align-items-center">
+                                    <a href="">
+                                        <i class="fas fa-cart-arrow-down"></i>
+                                        <!--Dynamic Javascript Content-->
+                                        <strong class="header__subtitles__total-orders"></strong>
+                                        <!--Dynamic Javascript Content END-->
+                                    </a>
+                                </li>
                             </ul>
-                        </div>
+                        </nav>
                     </div>
                 </header>
 
@@ -93,10 +111,10 @@
                             Matériel photographique, accessoires et meubles
                         </h4>
                     </div>
-                    <img src="images/photographie.png" width="100%" height="" alt="">
+                    <img src="/public/img/photographie.png" width="100%" height="" alt="">
                 </section>
 
-                <!--Panier-->
+                <!--Cart-->
                 <article class="col-lg-12 error-empty">
                     <h3>
                         Oops, une erreur s'est produite !
@@ -105,24 +123,25 @@
                         Votre panier semble vide...
                     </p>
                     <p>
-                        <a href="index.html">
+                        <a href="../../index.html">
                             Cliquez ici
                         </a> 
                         pour ajouter dès maintenant un produit :D
                     </p>
+                    <img src="./../img/handymanNoProduct.gif" alt="">
                 </article>
-                <div class="col-lg-12 panier text-center">
-                    <section class="row panier__recap">
-                        <div class="col-lg-12 panier__recap__title">
+                <div class="col-lg-12 cart text-center">
+                    <section class="row cart__recap">
+                        <div class="col-lg-12 cart__recap__title">
                             <h3>
                                 <span>
                                     Récapitulatif de votre commande
                                 </span>
                             </h3>
                         </div>
-                        <article class="col-lg-12 panier__recap__infos">
+                        <article class="col-lg-12 cart__recap__infos">
                             <div class="row">
-                                <div class="offset-lg-2 col-lg-2 text-left">
+                                <div class="offset-lg-1 col-lg-2 text-left">
                                     <h4>
                                         Produit
                                     </h4>
@@ -144,12 +163,12 @@
                         
                         <article class="col-lg-12">
                             <!--Dynamic Javascript Content-->
-                            <div class="row panier__recap__products">
+                            <div class="row cart__recap__products">
                             </div>
                             <!--Dynamic Javascript Content END-->
                         </article>
 
-                        <article class="col-lg-12 panier__recap__total-price">
+                        <article class="col-lg-12 cart__recap__total-price">
                             <div class="row align-items-center">
                                 <div class="offset-lg-3 col-lg-3 align-center">
                                     <h5>
@@ -167,21 +186,24 @@
                             </div>
                         </article>
                         <article class="col-lg-12">
-                            <button class="panier__recap__clear">
+                            <button class="cart__recap__clear">
                                 <i class="fas fa-trash-alt"></i>
                                 Vider le panier
+                                <!--Dynamic Javascript Content-->
+                                (-<span></span>)
+                                <!--Dynamic Javascript END-->
                             </button>
                         </article>
                     </section>
-                    <section class="panier__user-infos">
-                        <div class="col-lg-12 panier__user-infos__title">
+                    <section class="cart__user-infos">
+                        <div class="col-lg-12 cart__user-infos__title">
                             <h3>
                                 <span>
                                     Vos coordonnées
                                 </span>
                             </h3>
                         </div>
-                        <form action="" method="get" class="col-lg-12 panier__user-infos__form">
+                        <form action="" method="get" class="col-lg-12 cart__user-infos__form">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="row align-items-center">
@@ -235,8 +257,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-12 panier__user-infos__form__btn-submit">
-                                    <input id="btn-submit-panier" type="submit" value="Valider ma commande">
+                                <div class="col-lg-12 cart__user-infos__form__btn-submit">
+                                    <input id="btn-submit-cart" type="submit" value="Valider ma commande">
                                 </div>
                             </div>
                         </form>
@@ -244,14 +266,95 @@
                 </div>
 
                 <!--Footer-->
-                <footer class="col-lg-12 text-center">
-                    <p>
-                        © 2020 Orinoco – TOUS DROITS RÉSERVÉS
-                    </p>
+                <footer class="col-lg-12 text-center footer">
+                    <article class="footer__sm">
+                        <a href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </article>
+                    <article class="footer__infos row">
+                        <div class="col-lg-4">
+                            <i class="fas fa-info"></i>
+                            <h6>
+                                Informations
+                            </h6>
+                            <p>
+                                <a href="">Status de nos services</a>
+                            </p>
+                            <p>
+                                <a href="">Conditions générales de vente</a>
+                            </p>
+                            <p>
+                                <a href="">Conditions générales d'utilisation</a>
+                            </p>
+                            <p>
+                                <a href="">Politique de confientialité</a>
+                            </p>
+                            <p>
+                                <a href="">Cookies</a>
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <i class="fas fa-home"></i>
+                            <h6>
+                                Orinoco
+                            </h6>
+                            <p>
+                                <a href="">Entreprise</a>
+                            </p>
+                            <p>
+                                <a href="">Développeurs</a>
+                            </p>
+                            <p>
+                                <a href="">À propos</a>
+                            </p>
+                            <p>
+                                <a href="">API</a>
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <i class="fas fa-question"></i>
+                            <h6>
+                                Support
+                            </h6>
+                            <p>
+                                <a href="">Nous contacter</a><br>
+                                <span>
+                                    support@orinoco.fr
+                                </span>
+                            </p>
+                            <p>
+                                <a href="">Support téléphonique</a><br>
+                                <span>
+                                    +33.6.06.06.06.06
+                                </span>
+                            </p>
+                        </div>
+                    </article>
+                    <article class="col-lg-12 footer__copyright">
+                        <img src="/public/img/favicon.png">
+                        <p>
+                            <span>
+                                © 2020 Orinoco, Inc.
+                            </span>
+                        </p>
+                    </article>
                 </footer>
             </div>
         </main>
-        <script src="./public/js/panier.js"></script>
-        <script src="./public/js/totalProducts.js"></script>
+        <script src="../js/cart.js"></script>
+        <script src="../js/totalProductCart.js"></script>
     </body>
 </html>
