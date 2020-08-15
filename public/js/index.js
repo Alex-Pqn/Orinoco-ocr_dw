@@ -5,22 +5,22 @@ const url = "http://localhost:3000/api/cameras/"
 // => http://localhost:3000/api/cameras/
 
 const apiProducts = async function () {
-    let xhr = new XMLHttpRequest(); // XHR creation
-    xhr.open("GET", url, true); // request method & url
-    xhr.responseType = "json"; // request type modify
-    xhr.send(); // send request
-    console.log(this);
+    let xhr = new XMLHttpRequest(); //XHR http request creation
+    xhr.open("GET", url, true); //request method & url
+    xhr.responseType = "json"; //request format modify
+    xhr.send(); //send request
+    console.log(this); //display request in console
     xhr.onerror;
     xhr.onreadystatechange = function() {
-        const apiStatutReady = this.readyState === 4 && this.status === 200 && xhr.DONE; // status when API is ready
-        const apiStatutNotReady = this.status !== 200 && this.status !== 0; // statut when API is not ready
-        console.log(this); // return http requests in console
+        const apiStatutReady = this.readyState === 4 && this.status === 200 && xhr.DONE; //status when API is ready
+        const apiStatutNotReady = this.status !== 200 && this.status !== 0; //statut when API is not ready
+        console.log(this); //display http requests in console
         
-        if (apiStatutReady) { // if API is ready
-            const cameras = this.response; // store API content in "cameras" const
+        if (apiStatutReady) { //if API is ready
+            const cameras = this.response; //store API content in "cameras" const
 
             for (let i = 0; i < cameras.length; i++) {
-                createArticle( // store the API content in a function called below
+                createArticle( //store the API content in a function called below
                     cameras[i]._id,
                     cameras[i].imageUrl,
                     cameras[i].name,
@@ -30,49 +30,54 @@ const apiProducts = async function () {
                 )
             }
 
-        } else if (apiStatutNotReady) { // if API is not ready
+        } else if (apiStatutNotReady) { //if API is not ready, return errors + statuts readyState & http in console
             alert("l'API 'Camera products' n'a malheureusement pas pu être récupérée... Veuillez réessayer ultérieurement.");
-            console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState); // return errors + statuts readyState & http in console
+            console.error("l'API 'Camera products' n'a pas pu être récuperée.")
+            console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
         };
     };
 }
 apiProducts();
 
-function createArticle(idContent, imageUrlContent, nameContent, descriptionContent, lensesContent, priceContent) {
-    //Elements creation
-    let main = document.querySelector(".products__list")
-    let article = document.createElement("article");
-    let imageUrl = document.createElement("img");
-    let name = document.createElement("h5");
-    let description = document.createElement("p");
-    let lenses = document.createElement("p");
-    let price = document.createElement("p");
-    let buttonHref = document.createElement("a");
-    let button = document.createElement("button");
-    //Elements content
-    imageUrl.src = imageUrlContent;
-    let nameText = document.createTextNode(nameContent)
-    let descriptionText = document.createTextNode(descriptionContent)
-    let lensesText = document.createTextNode("Types de lentilles disponibles : " + lensesContent.join(", "))
-    let priceText = document.createTextNode("Prix : " + priceContent + " €")
-    let buttonText = document.createTextNode("Commander");
-    buttonHref.href = "product.html?id="+idContent;
-    //Classnames creation
-    description.className = "products__list__desc"
-    lenses.className = "products__list__lenses"
-    price.className = "products__list__price"
-    //Parents, childs
-    name.appendChild(nameText);
-    description.appendChild(descriptionText);
-    price.appendChild(priceText);
-    lenses.appendChild(lensesText);
-    buttonHref.appendChild(button);
-    button.appendChild(buttonText);
+function createArticle(id, imageUrl, name, description, lenses, price) {
+    //elements creation
+    const main = document.querySelector(".products__list")
+    const article = document.createElement("article");
+    const imageUrlElement = document.createElement("img");
+    const nameElement = document.createElement("h5");
+    const descriptionElement = document.createElement("p");
+    const lensesElement = document.createElement("p");
+    const priceElement = document.createElement("p");
+    const buttonElement = document.createElement("button");
+    const buttonHrefElement = document.createElement("a");
+
+    //elements attributes
+    const nameText = document.createTextNode(name)
+    const descriptionText = document.createTextNode(description)
+    const lensesText = document.createTextNode("Types de lentilles disponibles : " + lenses.join(", "))
+    const priceText = document.createTextNode("Prix : " + price + " €")
+    const buttonText = document.createTextNode("Commander");
+    buttonHrefElement.href = "/public/html/order.html?id="+id;
+    imageUrlElement.src = imageUrl;
+
+    //elements classnames
+    article.className = "col-lg-6"
+    descriptionElement.className = "products__list__desc"
+    lensesElement.className = "products__list__lenses"
+    priceElement.className = "products__list__price"
+    
+    //parents & childs elements
     main.appendChild(article);
-    article.appendChild(name);
-    article.appendChild(imageUrl);
-    article.appendChild(description);
-    article.appendChild(lenses);
-    article.appendChild(price);
-    article.appendChild(buttonHref);
+    article.appendChild(nameElement);
+    article.appendChild(imageUrlElement);
+    article.appendChild(descriptionElement);
+    article.appendChild(lensesElement);
+    article.appendChild(priceElement);
+    article.appendChild(buttonHrefElement);
+    nameElement.appendChild(nameText);
+    descriptionElement.appendChild(descriptionText);
+    priceElement.appendChild(priceText);
+    lensesElement.appendChild(lensesText);
+    buttonHrefElement.appendChild(buttonElement);
+    buttonElement.appendChild(buttonText);
 }

@@ -35,13 +35,13 @@
         <!--Importations & Responsive-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./public/css/prefixed/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/css/prefixed/style.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
         <!--Icon & Style-->
-        <link rel="icon" href="/public/img/favicon.png">
+        <link rel="icon" href="../img/favicon.png">
         <meta name="theme-color" content="#5DC8A8">
-        <title>Orinoco - Votre site d'achats en ligne !</title>
+        <title>Orinoco - Votre produit</title>
     </head>
     <body>
         <main class="container">
@@ -51,7 +51,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 header__title">
                             <h1>
-                                <a href="">
+                                <a href="./../../index.html">
                                     ORINOCO
                                 </a>
                             </h1>
@@ -65,8 +65,8 @@
                         <nav class="col-lg-5 header__subtitles">
                             <ul class="row">
                                 <li>
-                                    <h2 class="header__subtitles__on">
-                                        <a href="">
+                                    <h2 class="header__subtitles__off">
+                                        <a href="./../../index.html">
                                             Accueil
                                         </a>
                                     </h2>
@@ -110,29 +110,34 @@
                             Matériel photographique, accessoires et meubles
                         </h4>
                     </div>
-                    <img src="public/img/photographie.png" width="100%" height="" alt="">
+                    <img src="/public/img/photographie.png" width="100%" height="" alt="">
                 </section>
 
-                <!--Products-->
-                <section class="col-lg-12 products text-center">
-                    <h3>
-                        <span>
-                            Nos produits
-                        </span>
-                    </h3>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h4>
-                                <span>
-                                    Caméras Vintage
-                                </span>
-                            </h4>
-                            <!--Dynamic Javascript Content-->
-                            <div class="products__list row"></div>
-                            <!--Dynamic Javascript Content END-->
-                        </div>
-                    </div>
-                </section>
+                <!--Dynamic Javascript Content in <span> & <select>-->
+                <article class="col-lg-12 products-order text-center">
+                    <h4>
+                        Vous êtes sur le point d'ajouter <span id="products-order__name"></span> à votre panier !
+                    </h4>
+                    <img id="products-order__img">
+                    <p class="products-order__desc-bloc">
+                        Description du produit
+                        <br>
+                        <span id="products-order__desc"></span>
+                    </p>
+                    <p class="products-order__custom">
+                        Personnalisation
+                        <br>
+                        <form>
+                            <select class="products-order__custom__select" name="custom-product" size="1"></select>
+                        </form>
+                    </p>
+                    <p class="products-order__price-bloc">
+                        Prix :
+                        <span id="products-order__price"></span>
+                        €
+                    </p>
+                    <button>Ajouter à mon panier</button>
+                </article>
                 <!--Footer-->
                 <footer class="col-lg-12 text-center footer">
                     <article class="footer__sm">
@@ -159,7 +164,7 @@
                                 Informations
                             </h6>
                             <p>
-                                <a href="">Statuts de nos services</a>
+                                <a href="">Status de nos services</a>
                             </p>
                             <p>
                                 <a href="">Conditions générales de vente</a>
@@ -212,7 +217,7 @@
                         </div>
                     </article>
                     <article class="col-lg-12 footer__copyright">
-                        <img src="public/img/favicon.png">
+                        <img src="/public/img/favicon.png">
                         <p>
                             <span>
                                 © 2020 Orinoco, Inc.
@@ -222,7 +227,7 @@
                 </footer>
             </div>
         </main>
-        <script src="/public/js/index.js"></script>
-        <script src="/public/js/totalProductIndex.js"></script>
+        <script src="../js/order.js"></script>
+        <script src="../js/totalProductOrder.js"></script>
     </body>
 </html>
