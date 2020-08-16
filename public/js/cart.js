@@ -3,30 +3,14 @@ const orders = JSON.parse(localStorage.getItem('orders')) //get "orders" array o
 const prices = []; //declare array to store all the prices (in the cart) and make the total price below
 const reducer = (accumulator, currentValue) => accumulator + currentValue; //declare reducer for calculate the total price (addition)
 
-if (localStorage.length === 0 || orders.length === 0) { //if there is nothing in the cart, display error page
-    displayErrorPage();
-} else { //if there is at least one element
-    for (let i = 0; i < orders.length; i++) {
-        createElement(
-            orders[i].nameProduct,
-            orders[i].lensesChoiceProduct,
-            orders[i].priceProduct,
-            i
-        );
-        prices.push(orders[i].priceProduct)
-    }
-    totalPrice(prices);
-    clearAllProducts();
-}
-
 //display error page when nothing in the cart
-function displayErrorPage() {
+displayErrorPage = () => {
     document.querySelector(".error-empty").style.display = "block";
     document.querySelector(".cart").style.display = "none";
 }
 
 //generate html&css and display all products in cart
-function createElement(name, lensesChoice, price, index) {
+createElement = (name, lensesChoice, price, index) => {
     //elements creation
     const main = document.querySelector(".cart__recap__products");
     const container = document.createElement("div");
@@ -65,14 +49,14 @@ function createElement(name, lensesChoice, price, index) {
 
 //delete product of choice in cart when click on the "X" button correspond
 //this function is called above in the attribute 'onclick' button on "createElement" function
-function clearProductOfChoice(indexButton) {
+clearProductOfChoice = (indexButton) => {
     orders.splice(indexButton, 1)
     localStorage.setItem("orders", JSON.stringify(orders))
     location.reload();
 }
 
 //display total price of products in cart
-function totalPrice() {
+totalPrice = () => {
     const main = document.querySelector(".cart__recap__total-price span");
 
     const totalPrice = prices.reduce(reducer); //get all the prices in cart (stored in "prices" array) and calculate the total
@@ -82,11 +66,27 @@ function totalPrice() {
 }
 
 //clear the localStorage when click on the button "Vider le panier (-x)"
-function clearAllProducts() {
+clearAllProducts = () => {
     const button = document.querySelector(".cart__recap__clear");
 
     button.addEventListener('click', event => {
         window.localStorage.clear(); //clear the localStorage
         location.reload(); //reload page to display the change
     })
+}
+
+if (localStorage.length === 0 || orders.length === 0) { //if there is nothing in the cart, display error page
+    displayErrorPage();
+} else { //if there is at least one element
+    for (let i = 0; i < orders.length; i++) {
+        createElement(
+            orders[i].nameProduct,
+            orders[i].lensesChoiceProduct,
+            orders[i].priceProduct,
+            i
+        );
+        prices.push(orders[i].priceProduct)
+    }
+    totalPrice(prices);
+    clearAllProducts();
 }

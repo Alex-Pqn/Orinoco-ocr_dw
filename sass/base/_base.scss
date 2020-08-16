@@ -1,10 +1,12 @@
 
-a {
-    text-decoration: none!important;
-    color:#000;
-}
-
 body {
     font-style: normal;
     color:#000;
+    & a {
+        text-decoration: none!important;
+        color:#000;
+    }
+    & button {
+        outline: none !important;
+    }
 }
