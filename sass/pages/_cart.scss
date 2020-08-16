@@ -12,6 +12,9 @@
         font-size: 1.5em;
         margin-top: 15px;
     }
+    & a {
+        color: rgb(0, 132, 255);
+    }
 }
 
 .cart {
@@ -34,6 +37,7 @@
             font-size: 1.25em;
         }
         &__infos {
+            margin-bottom: 10px;
             & div {
                 padding: 0;
             }
@@ -42,7 +46,6 @@
             margin-bottom: 20px;
             &__container {
                 width: 100%;
-                margin-top: 10px;
                 & button {
                     display: flex;
                     justify-content: center;

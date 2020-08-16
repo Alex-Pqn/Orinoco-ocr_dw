@@ -1,45 +1,7 @@
 
 const url = "http://localhost:3000/api/cameras/"
 
-// CALL, REQUESTS API - GET
-// => http://localhost:3000/api/cameras/
-
-const apiProducts = async function () {
-    let xhr = new XMLHttpRequest(); //XHR http request creation
-    xhr.open("GET", url, true); //request method & url
-    xhr.responseType = "json"; //request format modify
-    xhr.send(); //send request
-    console.log(this); //display request in console
-    xhr.onerror;
-    xhr.onreadystatechange = function() {
-        const apiStatutReady = this.readyState === 4 && this.status === 200 && xhr.DONE; //status when API is ready
-        const apiStatutNotReady = this.status !== 200 && this.status !== 0; //statut when API is not ready
-        console.log(this); //display http requests in console
-        
-        if (apiStatutReady) { //if API is ready
-            const cameras = this.response; //store API content in "cameras" const
-
-            for (let i = 0; i < cameras.length; i++) {
-                createArticle( //store the API content in a function called below
-                    cameras[i]._id,
-                    cameras[i].imageUrl,
-                    cameras[i].name,
-                    cameras[i].description,
-                    cameras[i].lenses,
-                    cameras[i].price
-                )
-            }
-
-        } else if (apiStatutNotReady) { //if API is not ready, return errors + statuts readyState & http in console
-            alert("l'API 'Camera products' n'a malheureusement pas pu être récupérée... Veuillez réessayer ultérieurement.");
-            console.error("l'API 'Camera products' n'a pas pu être récuperée.")
-            console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
-        };
-    };
-}
-apiProducts();
-
-function createArticle(id, imageUrl, name, description, lenses, price) {
+createArticle = (id, imageUrl, name, description, lenses, price) => {
     //elements creation
     const main = document.querySelector(".products__list")
     const article = document.createElement("article");
@@ -81,3 +43,41 @@ function createArticle(id, imageUrl, name, description, lenses, price) {
     buttonHrefElement.appendChild(buttonElement);
     buttonElement.appendChild(buttonText);
 }
+
+// CALL, REQUESTS API - GET
+// => http://localhost:3000/api/cameras/
+
+const apiProducts = async function () {
+    let xhr = new XMLHttpRequest(); //XHR http request creation
+    xhr.open("GET", url, true); //request method & url
+    xhr.responseType = "json"; //request format modify
+    xhr.send(); //send request
+    console.log(this); //display request in console
+    xhr.onerror;
+    xhr.onreadystatechange = function() {
+        const apiStatutReady = this.readyState === 4 && this.status === 200 && xhr.DONE; //status when API is ready
+        const apiStatutNotReady = this.status !== 200 && this.status !== 0; //statut when API is not ready
+        console.log(this); //display http requests in console
+        
+        if (apiStatutReady) { //if API is ready
+            const cameras = this.response; //store API content in "cameras" const
+
+            for (let i = 0; i < cameras.length; i++) {
+                createArticle( //store the API content in a function called below
+                    cameras[i]._id,
+                    cameras[i].imageUrl,
+                    cameras[i].name,
+                    cameras[i].description,
+                    cameras[i].lenses,
+                    cameras[i].price
+                )
+            }
+
+        } else if (apiStatutNotReady) { //if API is not ready, return errors + statuts readyState & http in console
+            alert("l'API 'Camera products' n'a malheureusement pas pu être récupérée... Veuillez réessayer ultérieurement.");
+            console.error("l'API 'Camera products' n'a pas pu être récuperée.")
+            console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
+        };
+    };
+}
+apiProducts();
