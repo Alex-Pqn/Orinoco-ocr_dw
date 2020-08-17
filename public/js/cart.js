@@ -12,7 +12,7 @@ displayErrorPage = () => {
 //generate html&css and display all products in cart
 createElement = (name, lensesChoice, price, index) => {
     //elements creation
-    const main = document.querySelector(".cart__recap__products");
+    const main = document.querySelector(".cart__smry__products");
     const container = document.createElement("div");
     const nameElement = document.createElement("p");
     const lensesElement = document.createElement("p");
@@ -29,7 +29,7 @@ createElement = (name, lensesChoice, price, index) => {
     buttonElement.setAttribute('onclick', "clearProductOfChoice(value);");
 
     //elements classnames
-    container.className = "row cart__recap__products__container";
+    container.className = "row cart__smry__products__container";
     nameElement.className = "offset-lg-1 col-lg-2 text-left";
     lensesElement.className = "offset-lg-1 col-lg-3 text-left";
     priceElement.className = "offset-lg-1 col-lg-2 text-left";
@@ -57,7 +57,7 @@ clearProductOfChoice = (indexButton) => {
 
 //display total price of products in cart
 totalPrice = () => {
-    const main = document.querySelector(".cart__recap__total-price span");
+    const main = document.querySelector(".cart__smry__total-price span");
 
     const totalPrice = prices.reduce(reducer); //get all the prices in cart (stored in "prices" array) and calculate the total
     const totalPriceText = document.createTextNode(totalPrice); //display the total price
@@ -67,7 +67,7 @@ totalPrice = () => {
 
 //clear the localStorage when click on the button "Vider le panier (-x)"
 clearAllProducts = () => {
-    const button = document.querySelector(".cart__recap__clear");
+    const button = document.querySelector(".cart__smry__clear");
 
     button.addEventListener('click', event => {
         window.localStorage.clear(); //clear the localStorage
