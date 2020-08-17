@@ -1,5 +1,5 @@
 
-const url = "http://localhost:3000/api/cameras/"
+const url = "http://localhost:3000/api/cameras/";
 const orders = JSON.parse(localStorage.orders || '[]');
 let foundUrl = false;
 let lensesChoice;
@@ -8,7 +8,7 @@ let lensesChoice;
 pageOrderProduct = (imageUrl, name, description, lenses, price) => {
     displayCustomListSelect(
         lenses
-    );
+    )
     //elements selectors in "order" page
     const prdctImageUrl = document.getElementById("order__img");
     const prdctName = document.getElementById("order__name");
@@ -117,9 +117,9 @@ const apiProducts = async function () {
 
         } else if (apiStatusNotReady) { //if API is not ready, return errors + status readyState & http in console
             alert("l'API 'Camera products' n'a malheureusement pas pu être récupérée... Veuillez réessayer ultérieurement.");
-            console.error("l'API 'Camera products' n'a pas pu être récuperée.")
+            console.error("l'API 'Camera products' n'a pas pu être récuperée.");
             console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
         };
     };
 }
-apiProducts();
+apiProducts()
