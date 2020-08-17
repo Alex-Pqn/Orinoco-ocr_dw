@@ -82,6 +82,14 @@
                 font-size: .87em;
                 color: rgb(71, 71, 71);
             }
+            &__error {
+                & strong {
+                    font-size: .9em;
+                    color: rgb(175, 0, 0);
+                    background-color: rgba(255, 0, 0, 0.2);
+                    padding: 10px;
+                }
+            }
             &__btn-submit {
                 margin-top: 25px;
             }
