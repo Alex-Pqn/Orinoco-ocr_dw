@@ -1,0 +1,19 @@
+
+.error-api, .error-empty {
+    display: none;
+    margin: 20px 0 35px 0;
+    text-align: center;
+    & h3 {
+        font-size: 2.2em;
+    }
+    & p {
+        font-size: 1.5em;
+        margin-top: 15px;
+    }
+    & a {
+        color: rgb(0, 132, 255);
+    }
+    & img {
+        width: 320px;
+    }
+}
