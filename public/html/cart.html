@@ -46,7 +46,6 @@
     <body>
         <main class="container">
             <div class="row">
-
                 <!--Header-->
                 <header class="col-lg-12 header">
                     <div class="row align-items-center">
@@ -114,7 +113,7 @@
                     <img src="/public/img/photographie.png" width="100%" height="" alt="">
                 </section>
 
-                <!--Cart-->
+                <!--Error page when there is nothing in cart-->
                 <article class="col-lg-12 error-empty">
                     <h3>
                         Oops, une erreur s'est produite !
@@ -130,16 +129,20 @@
                     </p>
                     <img src="./../img/handymanNoProduct.gif" alt="">
                 </article>
+
+                <!--Cart-->
                 <div class="col-lg-12 cart text-center">
-                    <section class="row cart__recap">
-                        <div class="col-lg-12 cart__recap__title">
+                    <!--Summary-->
+                    <section class="row cart__smry">
+                        <!--Informations-->
+                        <div class="col-lg-12 cart__smry__title">
                             <h3>
                                 <span>
                                     Récapitulatif de votre commande
                                 </span>
                             </h3>
                         </div>
-                        <article class="col-lg-12 cart__recap__infos">
+                        <article class="col-lg-12 cart__smry__infos">
                             <div class="row">
                                 <div class="offset-lg-1 col-lg-2 text-left">
                                     <h4>
@@ -160,15 +163,14 @@
                                 </div>
                             </div>
                         </article>
-                        
+                        <!--Products-->
                         <article class="col-lg-12">
-                            <!--Dynamic Javascript Content-->
-                            <div class="row cart__recap__products">
+                            <div class="row cart__smry__products">
+                                <!--Dynamic Javascript Content here-->
                             </div>
-                            <!--Dynamic Javascript Content END-->
                         </article>
-
-                        <article class="col-lg-12 cart__recap__total-price">
+                        <!--Total price-->
+                        <article class="col-lg-12 cart__smry__total-price">
                             <div class="row align-items-center">
                                 <div class="offset-lg-3 col-lg-3 align-center">
                                     <h5>
@@ -177,89 +179,79 @@
                                 </div>
                                 <div class="offset-lg-1 col-lg-5 text-left">
                                     <h5>
-                                        <!--Dynamic Javascript Content-->
-                                        <span></span>
-                                        <!--Dynamic Javascript END-->
+                                        <span>
+                                            <!--Dynamic Javascript Content here-->
+                                        </span>
                                         €
                                     </h5>
                                 </div>
                             </div>
                         </article>
+                        <!--Cart clear-->
                         <article class="col-lg-12">
-                            <button class="cart__recap__clear">
+                            <button class="cart__smry__clear">
                                 <i class="fas fa-trash-alt"></i>
                                 Vider le panier
-                                <!--Dynamic Javascript Content-->
-                                (-<span></span>)
-                                <!--Dynamic Javascript END-->
+                                (-<span>
+                                    <!--Dynamic Javascript Content here-->
+                                </span>)
                             </button>
                         </article>
                     </section>
-                    <section class="cart__user-infos">
-                        <div class="col-lg-12 cart__user-infos__title">
+
+                    <!--User informations-->
+                    <section class="cart__contact">
+                        <!--Title-->
+                        <div class="col-lg-12 cart__contact__title">
                             <h3>
                                 <span>
                                     Vos coordonnées
                                 </span>
                             </h3>
                         </div>
-                        <form action="" method="get" class="col-lg-12 cart__user-infos__form">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="row align-items-center">
-                                        <div class="offset-lg-2 col-lg-3 text-right">
-                                            <label for="last-name">
-                                                Nom : 
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-7 text-left">
-                                            <input type="text" name="last-name" required>
-                                        </div>
-                                        <div class="offset-lg-2 col-lg-3 text-right">
-                                            <label for="first-name">
-                                                Prénom : 
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-7 text-left">
-                                            <input type="text" name="first-name" required>
-                                        </div>
-                                        <div class="offset-lg-2 col-lg-3 text-right">
-                                            <label for="email">
-                                                E-mail : 
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-7 text-left">
-                                            <input type="email" name="email" required>
-                                        </div>
-                                        <div class="offset-lg-2 col-lg-3 text-right">
-                                            <label for="address">
-                                                Adresse : 
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-7 text-left">
-                                            <input type="text" name="address" required>
-                                        </div>
-                                        <div class="offset-lg-2 col-lg-3 text-right">
-                                            <label for="postal-code">
-                                                Code postal : 
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-7 text-left">
-                                            <input type="text" name="postal-code" required>
-                                        </div>
-                                        <div class="offset-lg-2 col-lg-3 text-right">
-                                            <label for="city">
-                                                Ville : 
-                                            </label>
-                                        </div>
-                                        <div class="col-lg-7 text-left">
-                                            <input type="text" name="city" required>
-                                        </div>
-                                    </div>
+                        <!--Form-->
+                        <form action="" method="get" class="col-lg-12 cart__contact__form">
+                            <div class="row align-items-center">
+                                <div class="offset-lg-2 col-lg-6 text-right">
+                                    <label for="last-name">
+                                        Nom : 
+                                    </label>
+                                    <input type="text" name="last-name" required>
                                 </div>
-                                <div class="col-lg-12 cart__user-infos__form__btn-submit">
-                                    <input id="btn-submit-cart" type="submit" value="Valider ma commande">
+                                <div class="offset-lg-2 col-lg-6 text-right">
+                                    <label for="first-name">
+                                        Prénom : 
+                                    </label>
+                                    <input type="text" name="first-name" required>
                                 </div>
+                                <div class="offset-lg-2 col-lg-6 text-right">
+                                    <label for="email">
+                                        E-mail : 
+                                    </label>
+                                    <input type="email" name="email" required>
+                                </div>
+                                <div class="offset-lg-2 col-lg-6 text-right">
+                                    <label for="address">
+                                        Adresse : 
+                                    </label>
+                                    <input type="text" name="address" required>
+                                </div>
+                                <div class="offset-lg-2 col-lg-6 text-right">
+                                    <label for="postal-code">
+                                        Code postal : 
+                                    </label>
+                                    <input type="text" name="postal-code" required>
+                                </div>
+                                <div class="offset-lg-2 col-lg-6 text-right">
+                                    <label for="city">
+                                        Ville : 
+                                    </label>
+                                    <input type="text" name="city" required>
+                                </div>
+                            </div>
+                            <!--Submit button-->
+                            <div class="offset-lg-3 col-lg-6 cart__contact__form__btn-submit">
+                                <input id="btn-submit-cart" type="submit" value="Valider ma commande">
                             </div>
                         </form>
                     </section>
@@ -267,7 +259,8 @@
 
                 <!--Footer-->
                 <footer class="col-lg-12 text-center footer">
-                    <article class="footer__sm">
+                    <!--Social networks-->
+                    <article class="footer__sn">
                         <a href="">
                             <i class="fab fa-instagram"></i>
                         </a>
