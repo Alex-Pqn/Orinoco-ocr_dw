@@ -88,9 +88,9 @@
                                 <li class="row header__subtitles__cart align-items-center">
                                     <a href="/public/html/cart.html">
                                         <i class="fas fa-cart-arrow-down"></i>
-                                        <!--Dynamic Javascript Content-->
-                                        <strong class="header__subtitles__total-orders"></strong>
-                                        <!--Dynamic Javascript Content END-->
+                                        <strong class="header__subtitles__total-orders">
+                                            <!--Dynamic Javascript Content here-->
+                                        </strong>
                                     </a>
                                 </li>
                             </ul>
@@ -113,30 +113,50 @@
                     <img src="/public/img/photographie.png" width="100%" height="" alt="">
                 </section>
 
-                <!--Dynamic Javascript Content in <span> & <select>-->
+
                 <article class="col-lg-12 order text-center">
+                    <p class="text-left">
+                        <a href="../../index.html" class="order__back">
+                            <i class="fas fa-chevron-left"></i>
+                            <strong>
+                                RETOUR
+                            </strong>
+                        </a>
+                    </p>
                     <h4>
-                        Vous êtes sur le point d'ajouter <span id="order__name"></span> à votre panier !
+                        Vous êtes sur le point d'ajouter 
+                        <span id="order__name">
+                            <!--Dynamic Javascript Content here-->
+                        </span> 
+                        à votre panier !
                     </h4>
                     <img id="order__img">
-                    <p class="order__desc-bloc">
+                    <p class="order__desc-bloc offset-lg-2 col-lg-8">
                         Description du produit
                         <br>
-                        <span id="order__desc"></span>
+                        <span id="order__desc">
+                            <!--Dynamic Javascript Content here-->
+                        </span>
                     </p>
                     <p class="order__custom">
                         Personnalisation
                         <br>
                         <form>
-                            <select class="order__custom__select" name="custom-product" size="1"></select>
+                            <select class="order__custom__select" name="custom-product" size="1">
+                                <!--Dynamic Javascript Content here-->
+                            </select>
                         </form>
                     </p>
                     <p class="order__price-bloc">
                         Prix :
-                        <span id="order__price"></span>
+                        <span id="order__price">
+                            <!--Dynamic Javascript Content here-->
+                        </span>
                         €
                     </p>
-                    <button>Ajouter à mon panier</button>
+                    <button>
+                        Ajouter à mon panier
+                    </button>
                 </article>
                 <!--Footer-->
                 <footer class="col-lg-12 text-center footer">
