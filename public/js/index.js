@@ -1,5 +1,5 @@
 
-const url = "http://localhost:3000/api/cmeras/"
+const url = "http://localhost:3000/api/cameras/"
 
 createArticle = (id, imageUrl, name, description, lenses, price) => {
     //elements creation
