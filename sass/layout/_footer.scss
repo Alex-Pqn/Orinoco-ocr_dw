@@ -20,37 +20,26 @@
             margin: 25px;
             font-size: 2.1em;
             transition-property: all;
+            transition-duration: .3s;
+            &:hover {
+                filter: brightness(.7);
+            }
 
         }
         & .fa-facebook-f {
             color: #3b5998;
-            &:hover {
-                color: #2e4983;
-            }
         }
         & .fa-instagram {
             color: #EA4B60;
-            &:hover {
-                color: #ca374b;
-            }
         }
         & .fa-twitter {
             color: #1C9DEB;
-            &:hover {
-                color: #1580c2;
-            }
         }
         & .fa-linkedin-in {
             color: #0274B2;
-            &:hover {
-                color: #065a88;
-            }
         }
         & .fa-pinterest {
             color: #E60019;
-            &:hover {
-                color: #ac0b1e;
-            }
         }
     }
     &__infos {

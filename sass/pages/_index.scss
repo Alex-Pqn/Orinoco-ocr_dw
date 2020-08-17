@@ -36,16 +36,15 @@
 .products {
     & h3 {
         margin-top: 45px;
-        font-size: 2.7em;
-        & span {
-            padding-bottom: 3px;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.75);
-        }
+        font-size: 3.1em;
+        opacity: .4;
+        letter-spacing: 10px;
+        word-spacing: 6px;
     }
     & h4 {
-        opacity: .9;
-        margin-top: 45px;
-        margin-bottom: 15px;
+        font-size: 1.9em;
+        margin: -5px 0 35px 4.5px;
+        letter-spacing: 13.8px;
     }
     &__list {
         & article {

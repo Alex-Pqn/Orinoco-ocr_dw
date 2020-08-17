@@ -44,6 +44,12 @@ createArticle = (id, imageUrl, name, description, lenses, price) => {
     buttonElement.appendChild(buttonText);
 }
 
+//display error page when nothing in the cart
+displayErrorPage = () => {
+    document.querySelector(".error-api").style.display = "block";
+    document.querySelector(".products").style.display = "none";
+}
+
 // CALL, REQUESTS API - GET
 // => http://localhost:3000/api/cameras/
 
@@ -55,11 +61,11 @@ const apiProducts = async function () {
     console.log(this); //display request in console
     xhr.onerror;
     xhr.onreadystatechange = function() {
-        const apiStatutReady = this.readyState === 4 && this.status === 200 && xhr.DONE; //status when API is ready
-        const apiStatutNotReady = this.status !== 200 && this.status !== 0; //statut when API is not ready
+        const apiStatusReady = this.readyState === 4 && this.status === 200 && xhr.DONE; //status when API is ready
+        const apiStatusNotReady = this.status !== 200 && this.status !== 0; //status when API is not ready
         console.log(this); //display http requests in console
         
-        if (apiStatutReady) { //if API is ready
+        if (apiStatusReady) { //if API is ready
             const cameras = this.response; //store API content in "cameras" const
 
             for (let i = 0; i < cameras.length; i++) {
@@ -73,9 +79,9 @@ const apiProducts = async function () {
                 )
             }
 
-        } else if (apiStatutNotReady) { //if API is not ready, return errors + statuts readyState & http in console
-            alert("l'API 'Camera products' n'a malheureusement pas pu être récupérée... Veuillez réessayer ultérieurement.");
-            console.error("l'API 'Camera products' n'a pas pu être récuperée.")
+        } else if (apiStatusNotReady) { //if API is not ready, return errors + status readyState & http in console
+            displayErrorPage();
+            console.error("l'API 'Camera products' n'a pas pu être récuperée.");
             console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
         };
     };
