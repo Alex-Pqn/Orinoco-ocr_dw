@@ -9,13 +9,8 @@
         &__title {
             margin-top: 25px;
             margin-bottom: 30px;
-            & h3 {
-                font-size: 2em;
-                & span {
-                    padding-bottom: 3px;
-                    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-                }
-            }
+            font-size: 2em;
+            text-decoration: underline;
         }
         & p {
             font-size: 1.25em;
@@ -65,13 +60,8 @@
             padding-top: 20px;
             margin-top: 30px;
             margin-bottom: 10px;
-            & h3 {
-                font-size: 2em;
-                & span {
-                    padding-bottom: 3px;
-                    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-                }
-            }
+            font-size: 2em;
+            text-decoration: underline;
         }
         &__form {
             padding: 25px;
