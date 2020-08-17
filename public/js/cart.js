@@ -21,10 +21,10 @@ createElement = (name, lensesChoice, price, index) => {
     const nameText = document.createTextNode(name);
     const lensesText = document.createTextNode(lensesChoice);
     const priceText = document.createTextNode(price + " €");
-    const crossImg = document.createElement("img")
+    const crossImg = document.createElement("img");
 
     //elements attributes
-    crossImg.setAttribute('src', "/public/img/crossCart.svg")
+    crossImg.setAttribute('src', "/public/img/crossCart.svg");
     buttonElement.setAttribute('value', index);
     buttonElement.setAttribute('onclick', "clearProductOfChoice(value);");
 
@@ -33,7 +33,7 @@ createElement = (name, lensesChoice, price, index) => {
     nameElement.className = "offset-lg-1 col-lg-2 text-left";
     lensesElement.className = "offset-lg-1 col-lg-3 text-left";
     priceElement.className = "offset-lg-1 col-lg-2 text-left";
-    buttonElement.className = "col-lg-1"
+    buttonElement.className = "col-lg-1";
 
     //parents & childs elements
     main.appendChild(container);
@@ -50,8 +50,8 @@ createElement = (name, lensesChoice, price, index) => {
 //delete product of choice in cart when click on the "X" button correspond
 //this function is called above in the attribute 'onclick' button on "createElement" function
 clearProductOfChoice = (indexButton) => {
-    orders.splice(indexButton, 1)
-    localStorage.setItem("orders", JSON.stringify(orders))
+    orders.splice(indexButton, 1);
+    localStorage.setItem("orders", JSON.stringify(orders));
     location.reload();
 }
 

@@ -1,9 +1,9 @@
 
-const url = "http://localhost:3000/api/cameras/"
+const url = "http://localhost:3000/api/cmeras/"
 
 createArticle = (id, imageUrl, name, description, lenses, price) => {
     //elements creation
-    const main = document.querySelector(".products__list")
+    const main = document.querySelector(".products__list");
     const article = document.createElement("article");
     const imageUrlElement = document.createElement("img");
     const nameElement = document.createElement("h5");
@@ -14,19 +14,19 @@ createArticle = (id, imageUrl, name, description, lenses, price) => {
     const buttonHrefElement = document.createElement("a");
 
     //elements attributes
-    const nameText = document.createTextNode(name)
-    const descriptionText = document.createTextNode(description)
-    const lensesText = document.createTextNode("Types de lentilles disponibles : " + lenses.join(", "))
-    const priceText = document.createTextNode("Prix : " + price + " €")
+    const nameText = document.createTextNode(name);
+    const descriptionText = document.createTextNode(description);
+    const lensesText = document.createTextNode("Types de lentilles disponibles : " + lenses.join(", "));
+    const priceText = document.createTextNode("Prix : " + price + " €");
     const buttonText = document.createTextNode("Commander");
     buttonHrefElement.href = "/public/html/order.html?id="+id;
     imageUrlElement.src = imageUrl;
 
     //elements classnames
-    article.className = "col-lg-6"
-    descriptionElement.className = "products__list__desc"
-    lensesElement.className = "products__list__lenses"
-    priceElement.className = "products__list__price"
+    article.className = "col-lg-6";
+    descriptionElement.className = "products__list__desc";
+    lensesElement.className = "products__list__lenses";
+    priceElement.className = "products__list__price";
     
     //parents & childs elements
     main.appendChild(article);

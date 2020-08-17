@@ -1,5 +1,5 @@
 
-const orders = JSON.parse(localStorage.getItem('orders'))
+const orders = JSON.parse(localStorage.getItem('orders'));
 
 if (localStorage.length === 0) {
 }else{
