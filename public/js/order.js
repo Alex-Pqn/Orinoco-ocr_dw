@@ -60,9 +60,16 @@ finalisationButton = (name, price) => {
             priceProduct: price
         };
         orders.push(productOrder); //push productOrder object in "orders" array
-        localStorage.setItem("orders", JSON.stringify(orders)); //set the "orders" array in localStorage (in strings format)
-        window.location.replace("../../index.html"); //redirect to home
+        localStorage.setItem("orders", JSON.stringify(orders)); //set the "orders" array in localStorage (in strings format) 
+        window.scrollTo(0, 0);
+        location.reload();
     })
+}
+
+//display error page when API not respond
+displayErrorPage = () => {
+    document.querySelector(".order").style.display = "none";
+    document.querySelector(".error-api").style.display = "block";
 }
 
 // CALL, REQUESTS API - GET
@@ -110,13 +117,13 @@ const apiProducts = async function () {
                 if (!foundUrl) { //if no API id matched with the id in the url parameter, redirect to home
                     window.location.replace("../../index.html");
                 }
-            } catch (err) { //if the url parameter can't be create, redirect to home when user click "OK"
+            } catch (err) { //if the url parameter can't be create, redirect to home
                 console.error("Erreur rencontrée lors de la création du paramètre d'url : " + err);
                 window.location.replace("../../index.html");
             }
 
         } else if (apiStatusNotReady) { //if API is not ready, return errors + status readyState & http in console
-            alert("l'API 'Camera products' n'a malheureusement pas pu être récupérée... Veuillez réessayer ultérieurement.");
+            displayErrorPage();
             console.error("l'API 'Camera products' n'a pas pu être récuperée.");
             console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
         };

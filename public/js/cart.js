@@ -1,42 +1,15 @@
-const formInvalidLastName = "Le nom est invalide."
-const formInvalidName = "Le prénom est invalide."
-const formInvalidEmail = "L'e-mail entrée est invalide."
-const formInvalidAddress = "L'adresse entréee est invalide."
-const formInvalidPostal = "Le code postal entré est invalide."
-const formInvalidCity = "Le nom de ville entré est invalide."
-const formContainsNumber = "Cette case ne peut pas contenir de chiffre."
-const formContainsCaracters = "Cette case ne peut pas contenir de caractères spéciaux."
-const formEnoughCaractersThree = "Cette case doit contenir plus de 3 caractères."
-const formEnoughCaractersFourth = "Cette case doit contenir plus de 4 caractères."
-const formEnoughCaractersEight = "Cette doit contenir plus de 8 caractères."
-const formContainsOnlyNumbers = "Cette case ne peut pas contenir uniquement des chiffres."
-const formContainsOnlyLetters = "Cette case ne peut pas contenir uniquement des lettres."
-const formMustContainsOnlyNumbers = "Cette case doit contenir uniquement des chiffres."
-const empty = ""
-let expressionsList;
-let lastnameValidation;
-let nameValidation;
-let emailValidation;
-let addressValidation;
-let postalValidation;
-let cityValidation;
-let lastNameValue;
-let nameValue;
-let emailValue;
-let addressValue;
-let postalValue;
-let cityValue;
-let errorForm;
-
-const orders = JSON.parse(localStorage.getItem('orders')) //get "orders" array on localStorage in JSON format
-const prices = []; //declare array to store all the prices (in the cart) and make the total price below
-const reducer = (accumulator, currentValue) => accumulator + currentValue; //declare reducer for calculate the total price (addition)
 
 //display error page when nothing in the cart
 displayErrorPage = () => {
     document.querySelector(".error-empty").style.display = "block";
     document.querySelector(".cart").style.display = "none";
 }
+
+// PRODUCTS LIST PART
+// "Récapitulatif de votre commande"
+
+const orders = JSON.parse(localStorage.getItem('orders')) //get "orders" array on localStorage in JSON format
+const prices = []; //declare array to store all the prices (in the cart) and make the total price below
 
 //generate html&css and display all products in cart
 createElement = (name, lensesChoice, price, index) => {
@@ -87,6 +60,7 @@ clearProductOfChoice = (indexButton) => {
 //display total price of products in cart
 totalPrice = () => {
     const main = document.querySelector(".cart__smry__total-price span");
+    const reducer = (accumulator, currentValue) => accumulator + currentValue; //declare reducer for calculate the total price (addition)
 
     const totalPrice = prices.reduce(reducer); //get all the prices in cart (stored in "prices" array) and calculate the total
     const totalPriceText = document.createTextNode(totalPrice); //display the total price
@@ -104,152 +78,129 @@ clearAllProducts = () => {
     })
 }
 
-function formExpressionValidation(value) {
+// FORM PART
+// "Vos coordonnées"
+
+const submitCartButton = document.querySelector(".cart__contact__form__btn-submit input");
+
+let expressionsList;
+let expressionValidationList;
+
+let lastNameValue = document.orderForm.lastName.value;
+let nameValue = document.orderForm.Name.value;
+let emailValue = document.orderForm.Email.value;
+let addressValue = document.orderForm.Address.value;
+let postalValue = document.orderForm.Postal.value;
+let cityValue = document.orderForm.City.value;
+
+const errorsList = [
+    "Cette case ne peut pas contenir de chiffre.",
+    "Cette case ne peut pas contenir de caractères spéciaux.",
+    "Le code postal doit contenir uniquement des chiffres.",
+    "L'e-mail entré est invalide, veillez à bien l'orthographier.",
+    "L'adresse entrée est invalide, veillez à bien l'orthographier."
+]
+
+//display an error corresponding to the problem in the form
+displayErrorForm = (errorValue, index) => {
+    const errorForm = expressionValidationList[index].errorForm;
+    const displayError = document.querySelector(errorForm);
+    displayError.textContent = errorValue;
+}
+
+formExpressionValidation = (value) => {
     let expressionValidation = {
-        containsNumber : /\d+/, //contains numbers
-        containsLetter : /[a-zA-Z]/, //contains letters
-        regexEmail : /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, //e-mail validation
+        regexContainsNumber : /\d+/, //contains numbers
+        regexEmail : /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/, //e-mail validation
         regexCaracters : /\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:|\s/, //specials caracters
         regexAddress : /^[#.0-9a-zA-Z\s,-]+$/, //address validation
-        onlyLetters : /^[A-Za-z]+$/, //only letters
-        onlyNumbers : /^[0-9]+$/, //only numbers
+        regexOnlyNumbers : /^[0-9]+$/, //only numbers
     }
-    expressionsList = {};
-    expressionsList.containsNumber = expressionValidation.containsNumber.test(value);
-    expressionsList.containsLetter = expressionValidation.containsLetter.test(value);
-    expressionsList.regexEmail = expressionValidation.regexEmail.test(value);
-    expressionsList.regexCaracters = expressionValidation.regexCaracters.test(value);
-    expressionsList.onlyNumbers = expressionValidation.onlyNumbers.test(value);
-    expressionsList.onlyLetters = expressionValidation.onlyLetters.test(value);
-    return expressionsList;
+    expressionsList = {
+        regexContainsNumber : expressionValidation.regexContainsNumber.test(value),
+        regexEmail : expressionValidation.regexEmail.test(value),
+        regexCaracters : expressionValidation.regexCaracters.test(value),
+        regexAddress : expressionValidation.regexAddress.test(value),
+        regexOnlyNumbers : expressionValidation.regexOnlyNumbers.test(value)
+    };
+}
+
+storeValuesForm = () => {
+    lastNameValue = document.orderForm.lastName.value;
+    nameValue = document.orderForm.Name.value;
+    emailValue = document.orderForm.Email.value;
+    addressValue = document.orderForm.Address.value;
+    postalValue = document.orderForm.Postal.value;
+    cityValue = document.orderForm.City.value;
+
+    expressionValidationList = [
+        {
+            value: lastNameValue, errorForm: "#lastName", regexContainsNumber: true, regexCaracters: true, length: 3
+        },
+        {
+            value: nameValue, errorForm: "#Name", regexContainsNumber: true, regexCaracters: true, length: 3
+        },
+        {
+            value: emailValue, errorForm: "#Email", regexEmail: false, length: 4
+        },
+        {
+            value: addressValue, errorForm: "#Address", regexAddress: false, length: 8
+        },
+        {
+            value: postalValue, errorForm: "#Postal", regexOnlyNumbers: false, length: 3
+        },
+        {
+            value: cityValue, errorForm: "#City", regexContainsNumber: true, regexCaracters: true, length: 3
+        }
+    ]
 }
 
 formValidation = () => {
-    const submitButton = document.querySelector(".cart__contact__form__btn-submit input");
-    submitButton.addEventListener('click', event => {
-        cityFormValidation();
-        postalFormValidation();
-        addressFormValidation();
-        emailFormValidation();
-        nameFormValidation();
-        lastnameFormValidation();
-
-        if (lastnameValidation === true && nameValidation === true && emailValidation === true && addressValidation === true && postalValidation === true && cityValidation === true) {
-            console.log("Formulaire envoyé !")
-            formSending(lastNameValue, nameValue, emailValue, addressValue, postalValue, cityValue);
-        } else {
-            console.error("Impossible d'envoyer le formulaire, l'une des validations est incorrecte")
+    for (let i = 0; i < expressionValidationList.length; i++) {
+        const expression = expressionValidationList[i];
+        formExpressionValidation(expression.value)
+        if (expression.value.length < expression.length) {
+            displayErrorForm("Vous devez entrer au minimum " + expression.length + " caractères.", i);
+            event.preventDefault()
         }
-    })
-}
-
-lastnameFormValidation = () => {
-    lastNameValue = document.orderForm.lastName.value
-    formExpressionValidation(lastNameValue)
-
-    if (expressionsList.containsNumber === true) {
-        displayErrorForm(formInvalidLastName, formContainsNumber);
+        else if (expressionsList.regexContainsNumber === expression.regexContainsNumber) {
+            displayErrorForm(errorsList[0], i);
+            event.preventDefault()
+        }
+        else if (expressionsList.regexEmail === expression.regexEmail) {
+            displayErrorForm(errorsList[3], i);
+            event.preventDefault()
+        }
+        else if (expressionsList.regexCaracters === expression.regexCaracters) {
+            displayErrorForm(errorsList[1], i);
+            event.preventDefault()
+        }
+        else if (expressionsList.regexAddress === expression.regexAddress) {
+            displayErrorForm(errorsList[4], i);
+            event.preventDefault()
+        }
+        else if (expressionsList.regexOnlyNumbers === expression.regexOnlyNumbers) {
+            displayErrorForm(errorsList[2], i);
+            event.preventDefault()
+        }
+        else {
+            displayErrorForm("", i);
+        }
     }
-    if (expressionsList.regexCaracters === true) {
-        displayErrorForm(formInvalidLastName, formContainsCaracters);
-    } 
-    if (lastNameValue.length < 3) {
-        displayErrorForm(formInvalidLastName, formEnoughCaractersThree);
-    } else {
-        displayErrorForm(empty, empty)
-        lastnameValidation = true;
-    }
-}
-nameFormValidation = () => {
-    nameValue = document.orderForm.Name.value
-    formExpressionValidation(nameValue)
-
-    if (expressionsList.containsNumber === true) {
-        displayErrorForm(formInvalidName, formContainsNumber);
-    } 
-    if (expressionsList.regexCaracters === true) {
-        displayErrorForm(formInvalidName, formContainsCaracters);
-    } 
-    if (nameValue.length < 3) {
-        displayErrorForm(formInvalidName, formEnoughCaractersThree);
-    } else {
-        displayErrorForm(empty, empty)
-        nameValidation = true;
-    }
-}
-emailFormValidation = () => {
-    emailValue = document.orderForm.Email.value
-    formExpressionValidation(emailValue)
-
-    if (expressionsList.regexEmail === false) {
-        displayErrorForm(formInvalidEmail, formContainsCaracters);
-    } 
-    if (expressionsList.onlyLetters === true) {
-        displayErrorForm(formInvalidEmail, formContainsOnlyLetters);
-    } 
-    if (expressionsList.onlyNumbers === true) {
-        displayErrorForm(formInvalidEmail, formContainsOnlyNumbers);
-    } 
-    if (emailValue.length < 4) {
-        displayErrorForm(formInvalidEmail, formEnoughCaractersFourth);
-    } else {
-        displayErrorForm(empty, empty)
-        emailValidation = true;
-    }
-}
-addressFormValidation = () => {
-    addressValue = document.orderForm.Address.value
-    formExpressionValidation(addressValue)
-
-    if (expressionsList.regexAddress === false) {
-        displayErrorForm(formInvalidAddress, formContainsCaracters)
-    } else if (expressionsList.onlyNumbers === true) {
-        displayErrorForm(formInvalidAddress, formContainsOnlyNumbers)
-    } else if (addressValue.length < 8) {
-        displayErrorForm(formInvalidAddress, formEnoughCaractersEight)
-    } else {
-        displayErrorForm(empty, empty)
-        addressValidation = true;
-    }
-}
-postalFormValidation = () => {
-    postalValue = document.orderForm.Postal.value
-    formExpressionValidation(postalValue)
-
-    if (expressionsList.onlyNumbers === false) {
-        displayErrorForm(formInvalidPostal, formMustContainsOnlyNumbers)
-    } else if (postalValue.length < 3) {
-        displayErrorForm(formInvalidPostal, formEnoughCaractersThree)
-    } else {
-        displayErrorForm(empty, empty)
-        postalValidation = true;
-    }
-}
-cityFormValidation = () => {
-    cityValue = document.orderForm.City.value
-    formExpressionValidation(cityValue)
-
-    if (expressionsList.containsNumber === true) {
-        displayErrorForm(formInvalidCity, formContainsNumber)
-    } else if (expressionsList.regexCaracters === true) {
-        displayErrorForm(formInvalidCity, formContainsCaracters)
-    } else if (cityValue.length < 3) {
-        displayErrorForm(formInvalidCity, formEnoughCaractersThree)
-    } else {
-        displayErrorForm(empty, empty)
-        cityValidation = true;
-    }
+    // if (lastnameValidation === true && nameValidation === true && emailValidation === true && addressValidation === true && postalValidation === true && cityValidation === true) {
+    //     console.log("Formulaire envoyé !")
+    //     formSending(lastNameValue, nameValue, emailValue, addressValue, postalValue, cityValue);
+    // } else {
+    //     console.error("Impossible d'envoyer le formulaire, l'une des validations est incorrecte")
+    // }
 }
 
 formSending = (lastNameUser, nameUser, emailUser, addressUser, postalUser, cityUser) => {
     console.log(lastNameUser, nameUser, emailUser, addressUser, postalUser, cityUser)
 }
 
-//display an error corresponding to the problem in the form
-displayErrorForm = (firstErrorValue, secondErrorValue) => {
-    const errorContainer = document.querySelector(".cart__contact__form__error strong");
-    errorContainer.textContent = firstErrorValue + " " + secondErrorValue
-}
+// CALLS FUNCTIONS 
+// "form" and "products list" parts
 
 if (localStorage.length === 0 || orders.length === 0) { //if there is nothing in the cart, display error page
     displayErrorPage();
@@ -265,5 +216,8 @@ if (localStorage.length === 0 || orders.length === 0) { //if there is nothing in
     }
     totalPrice(prices);
     clearAllProducts();
-    formValidation();
+    submitCartButton.addEventListener('click', event => {
+        storeValuesForm();
+        formValidation();
+    })
 }

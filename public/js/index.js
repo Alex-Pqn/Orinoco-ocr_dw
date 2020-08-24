@@ -44,7 +44,7 @@ createArticle = (id, imageUrl, name, description, lenses, price) => {
     buttonElement.appendChild(buttonText);
 }
 
-//display error page when nothing in the cart
+//display error page when API not respond
 displayErrorPage = () => {
     document.querySelector(".error-api").style.display = "block";
     document.querySelector(".products").style.display = "none";
