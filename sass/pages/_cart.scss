@@ -56,19 +56,13 @@
         }
     }
     &__contact {
+        margin-bottom: 30px;
         &__title {
-            padding-top: 20px;
-            margin-top: 30px;
-            margin-bottom: 10px;
+            margin: 75px 0 30px;
             font-size: 2em;
             text-decoration: underline;
         }
         &__form {
-            padding: 25px;
-            & p {
-                font-size: 1.1em;
-                line-height: 40px;
-            }
             & label {
                 text-align: left;
                 margin: 0;
@@ -82,8 +76,13 @@
                 font-size: .87em;
                 color: rgb(71, 71, 71);
             }
+            &__error {
+                color: rgb(175, 0, 0);
+                padding: 3px 0 5px;
+                font-size: .95em!important;
+            }
             &__btn-submit {
-                margin-top: 25px;
+                margin-top: -5px;
             }
         }
     }
