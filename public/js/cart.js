@@ -1,19 +1,13 @@
 
-//display error page when nothing in the cart
-displayErrorPage = () => {
-    document.querySelector(".error-empty").style.display = "block";
-    document.querySelector(".cart").style.display = "none";
-}
-
 // PRODUCTS LIST PART
 // "Récapitulatif de votre commande"
 
-const orders = JSON.parse(localStorage.getItem('orders')) //get "orders" array on localStorage in JSON format
-const prices = []; //declare array to store all the prices (in the cart) and make the total price below
+const orders = JSON.parse(localStorage.getItem('orders')); //get "orders" array on localStorage in JSON format
+const prices = []; //declare array to store all the prices (in the cart) and make the total price in "totalPrice" function
 
-//generate html&css and display all products in cart
+//create html&css to display products in "orders" array localStorage in cart page
 createElement = (name, lensesChoice, price, index) => {
-    //elements creation
+    //elements creation & selectors
     const main = document.querySelector(".cart__smry__products");
     const container = document.createElement("div");
     const nameElement = document.createElement("p");
@@ -27,8 +21,8 @@ createElement = (name, lensesChoice, price, index) => {
 
     //elements attributes
     crossImg.setAttribute('src', "/public/img/crossCart.svg");
-    buttonElement.setAttribute('value', index);
-    buttonElement.setAttribute('onclick', "clearProductOfChoice(value);");
+    buttonElement.setAttribute('value', index); //add an attribute "value" to the elements with the index
+    buttonElement.setAttribute('onclick', "clearProductOfChoice(value);"); //add an attribute "onlick" to the elements to call the "clearProductOfChoice" function with the index
 
     //elements classnames
     container.className = "row cart__smry__products__container";
@@ -52,171 +46,254 @@ createElement = (name, lensesChoice, price, index) => {
 //delete product of choice in cart when click on the "X" button correspond
 //this function is called above in the attribute 'onclick' button on "createElement" function
 clearProductOfChoice = (indexButton) => {
-    orders.splice(indexButton, 1);
-    localStorage.setItem("orders", JSON.stringify(orders));
+    orders.splice(indexButton, 1); //deletes the element whose index matches in the orders array
+    localStorage.setItem("orders", JSON.stringify(orders)); //re set to make changes
     location.reload();
+
+    //delete "orders" array and "totalPrice" in localStorage if it is empty (the array is empty but remains if we delete the last element in a personalized way)
+    if (orders != undefined) {
+        if (orders.length === 0) {
+            localStorage.removeItem('orders');
+            localStorage.removeItem('totalPrice');
+            location.reload();
+        }
+    }
 }
 
-//display total price of products in cart
+//calculate and display total price of products in cart (+ set the totalPrice in localStorage for the orderConfirmation page later)
 totalPrice = () => {
     const main = document.querySelector(".cart__smry__total-price span");
     const reducer = (accumulator, currentValue) => accumulator + currentValue; //declare reducer for calculate the total price (addition)
 
     const totalPrice = prices.reduce(reducer); //get all the prices in cart (stored in "prices" array) and calculate the total
-    const totalPriceText = document.createTextNode(totalPrice); //display the total price
+    const totalPriceText = document.createTextNode(totalPrice);
+
+    localStorage.setItem('totalPrice', totalPrice) //store the totalPrice in localStorage for the orderConfirmation page later
 
     main.appendChild(totalPriceText);
 }
 
-//clear the localStorage when click on the button "Vider le panier (-x)"
+//remove the "orders" array in localStorage when click on the "Vider le panier (-x)" button
 clearAllProducts = () => {
     const button = document.querySelector(".cart__smry__clear");
 
     button.addEventListener('click', event => {
-        window.localStorage.clear(); //clear the localStorage
-        location.reload(); //reload page to display the change
+        localStorage.removeItem('orders');
+        localStorage.removeItem('totalPrice');
+        location.reload();
     })
 }
 
 // FORM PART
 // "Vos coordonnées"
 
-const submitCartButton = document.querySelector(".cart__contact__form__btn-submit input");
-
 let expressionsList;
 let expressionValidationList;
 
-let lastNameValue = document.orderForm.lastName.value;
-let nameValue = document.orderForm.Name.value;
-let emailValue = document.orderForm.Email.value;
-let addressValue = document.orderForm.Address.value;
-let postalValue = document.orderForm.Postal.value;
-let cityValue = document.orderForm.City.value;
+let lastNameValue;
+let fistNameValue;
+let emailValue;
+let addressValue;
+let cityValue;
 
 const errorsList = [
     "Cette case ne peut pas contenir de chiffre.",
     "Cette case ne peut pas contenir de caractères spéciaux.",
-    "Le code postal doit contenir uniquement des chiffres.",
     "L'e-mail entré est invalide, veillez à bien l'orthographier.",
     "L'adresse entrée est invalide, veillez à bien l'orthographier."
 ]
 
-//display an error corresponding to the problem in the form
-displayErrorForm = (errorValue, index) => {
-    const errorForm = expressionValidationList[index].errorForm;
+//display the error corresponding to the problem in the form
+displayErrorForm = (errorValue, expression) => {
+    const errorForm = expression.errorForm;
     const displayError = document.querySelector(errorForm);
     displayError.textContent = errorValue;
 }
 
+//define regex and create an array with booleans 
+//the "expressionList" array is passed to each line of the form (in formValidation function) and displays true or false depending on the value of the field
 formExpressionValidation = (value) => {
     let expressionValidation = {
         regexContainsNumber : /\d+/, //contains numbers
         regexEmail : /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/, //e-mail validation
         regexCaracters : /\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:|\s/, //specials caracters
         regexAddress : /^[#.0-9a-zA-Z\s,-]+$/, //address validation
-        regexOnlyNumbers : /^[0-9]+$/, //only numbers
     }
     expressionsList = {
         regexContainsNumber : expressionValidation.regexContainsNumber.test(value),
         regexEmail : expressionValidation.regexEmail.test(value),
         regexCaracters : expressionValidation.regexCaracters.test(value),
         regexAddress : expressionValidation.regexAddress.test(value),
-        regexOnlyNumbers : expressionValidation.regexOnlyNumbers.test(value)
     };
 }
 
+//display form values ​​in variables and create an array with validations form preferencies and value
 storeValuesForm = () => {
     lastNameValue = document.orderForm.lastName.value;
-    nameValue = document.orderForm.Name.value;
+    firstNameValue = document.orderForm.firstName.value;
     emailValue = document.orderForm.Email.value;
     addressValue = document.orderForm.Address.value;
-    postalValue = document.orderForm.Postal.value;
     cityValue = document.orderForm.City.value;
 
     expressionValidationList = [
         {
-            value: lastNameValue, errorForm: "#lastName", regexContainsNumber: true, regexCaracters: true, length: 3
+            value: lastNameValue, 
+            stepValidation: false, 
+            errorForm: "#lastName", 
+            regexContainsNumber: true, 
+            regexCaracters: true, 
+            minLength: 3,
+            maxLength: 16
         },
         {
-            value: nameValue, errorForm: "#Name", regexContainsNumber: true, regexCaracters: true, length: 3
+            value: firstNameValue, 
+            stepValidation: false, 
+            errorForm: "#firstName", 
+            regexContainsNumber: true, 
+            regexCaracters: true, 
+            minLength: 3,
+            maxLength: 16
         },
         {
-            value: emailValue, errorForm: "#Email", regexEmail: false, length: 4
+            value: emailValue, 
+            stepValidation: false, 
+            errorForm: "#Email", 
+            regexEmail: false, 
+            minLength: 4,
+            maxLength: 24
         },
         {
-            value: addressValue, errorForm: "#Address", regexAddress: false, length: 8
+            value: addressValue, 
+            stepValidation: false, 
+            errorForm: "#Address", 
+            regexAddress: false, 
+            minLength: 8,
+            maxLength: 32
         },
         {
-            value: postalValue, errorForm: "#Postal", regexOnlyNumbers: false, length: 3
-        },
-        {
-            value: cityValue, errorForm: "#City", regexContainsNumber: true, regexCaracters: true, length: 3
+            value: cityValue, 
+            stepValidation: false, 
+            errorForm: "#City", 
+            regexContainsNumber: true, 
+            regexCaracters: true, 
+            minLength: 3,
+            maxLength: 16
         }
     ]
 }
 
+//compare "expressionsList" array and "expressionValidationList" array preferencies
 formValidation = () => {
-    for (let i = 0; i < expressionValidationList.length; i++) {
-        const expression = expressionValidationList[i];
-        formExpressionValidation(expression.value)
-        if (expression.value.length < expression.length) {
-            displayErrorForm("Vous devez entrer au minimum " + expression.length + " caractères.", i);
+    expressionValidationList.forEach(expression =>{ 
+        formExpressionValidation(expression.value) //the value passed in the form by user is tested with regex and return true or false boolean in "expressionsList" array
+
+        if (expression.value.length < expression.minLength) {
             event.preventDefault()
+            displayErrorForm("Vous devez entrer au minimum " + expression.minLength + " caractères.", expression);
+        } 
+        else if (expression.value.length > expression.maxLength) {
+            event.preventDefault()
+            displayErrorForm("Vous ne pouvez entrer qu'au maximum " + expression.maxLength + " caractères.", expression);
         }
         else if (expressionsList.regexContainsNumber === expression.regexContainsNumber) {
-            displayErrorForm(errorsList[0], i);
             event.preventDefault()
+            displayErrorForm(errorsList[0], expression);
         }
         else if (expressionsList.regexEmail === expression.regexEmail) {
-            displayErrorForm(errorsList[3], i);
             event.preventDefault()
+            displayErrorForm(errorsList[2], expression);
         }
         else if (expressionsList.regexCaracters === expression.regexCaracters) {
-            displayErrorForm(errorsList[1], i);
             event.preventDefault()
+            displayErrorForm(errorsList[1], expression);
         }
         else if (expressionsList.regexAddress === expression.regexAddress) {
-            displayErrorForm(errorsList[4], i);
             event.preventDefault()
-        }
-        else if (expressionsList.regexOnlyNumbers === expression.regexOnlyNumbers) {
-            displayErrorForm(errorsList[2], i);
-            event.preventDefault()
+            displayErrorForm(errorsList[3], expression);
         }
         else {
-            displayErrorForm("", i);
+            expression.stepValidation = true;
+            displayErrorForm("", expression);
+            if (expressionValidationList[0].stepValidation === true &&
+                expressionValidationList[1].stepValidation === true &&
+                expressionValidationList[2].stepValidation === true &&
+                expressionValidationList[3].stepValidation === true &&
+                expressionValidationList[4].stepValidation === true) {
+                    formSending(); //initiates the sending procedure if all steps in the form are validates
+            }
         }
+    })
+}
+
+//when the form is complete and verified, the products id and the contact informations are stores in array and object.
+formSending = () => {
+    const products = [];
+    for (let i = 0; i < orders.length; i++) {
+        products.push(orders[i].id)
     }
-    // if (lastnameValidation === true && nameValidation === true && emailValidation === true && addressValidation === true && postalValidation === true && cityValidation === true) {
-    //     console.log("Formulaire envoyé !")
-    //     formSending(lastNameValue, nameValue, emailValue, addressValue, postalValue, cityValue);
-    // } else {
-    //     console.error("Impossible d'envoyer le formulaire, l'une des validations est incorrecte")
-    // }
+    const contact = {
+        "firstName": firstNameValue,
+        "lastName": lastNameValue,
+        "address": addressValue,
+        "city": cityValue,
+        "email": emailValue
+    }
+    postMethod(products, contact);
 }
 
-formSending = (lastNameUser, nameUser, emailUser, addressUser, postalUser, cityUser) => {
-    console.log(lastNameUser, nameUser, emailUser, addressUser, postalUser, cityUser)
+//the post method API connect the site with API and allow to send informations and products of the user in API (and recover the id of order later)
+postMethod = (products, contact) => {
+    const url = "http://localhost:3000/api/cameras/order";
+    const params = {
+        "contact": contact,
+        "products": products
+    };
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.onerror
+    xhr.onload = () => {
+        localStorage.removeItem('orders');
+        responseText = xhr.responseText;
+        localStorage.setItem("responseTextAPI", responseText); //store the response of the API in localStorage
+    };
+
+    xhr.send(JSON.stringify(params)); //stringify the "products" array and contact "object" then send in the API
+    alert('success')
 }
 
-// CALLS FUNCTIONS 
-// "form" and "products list" parts
+//display error page when nothing in the cart
+displayErrorPage = () => {
+    document.querySelector(".error-empty").style.display = "block";
+    document.querySelector(".cart").style.display = "none";
+}
 
-if (localStorage.length === 0 || orders.length === 0) { //if there is nothing in the cart, display error page
+// GENERAL CALLS FUNCTIONS 
+const responseTextAPI = localStorage.getItem("responseTextAPI");
+
+if (responseTextAPI != undefined) { //if there is an order waiting to be "accepted", redirect to "orderConfirmation" page
+    window.location.replace("orderConfirmation.html");
+}
+else if (orders == undefined) { //if there is nothing products in the cart, display error page
     displayErrorPage();
-} else { //if there is at least one element
+}
+else { //if there is at least one element in localStorage "orders" array (= minimum one product in cart)
+    const submitCartButton = document.querySelector(".cart__contact__form__btn-submit input");
+
     for (let i = 0; i < orders.length; i++) {
         createElement(
-            orders[i].nameProduct,
-            orders[i].lensesChoiceProduct,
-            orders[i].priceProduct,
+            orders[i].name,
+            orders[i].lenses,
+            orders[i].price,
             i
         );
-        prices.push(orders[i].priceProduct)
+        prices.push(orders[i].price) //push prices in "prices" array for calculate them in "totalPrice" function
     }
+
     totalPrice(prices);
     clearAllProducts();
-    submitCartButton.addEventListener('click', event => {
+    submitCartButton.addEventListener('click', event => { //on click "Valider ma commande" button, the functions for the verifications are called
         storeValuesForm();
         formValidation();
     })

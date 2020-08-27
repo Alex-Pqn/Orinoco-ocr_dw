@@ -41,7 +41,7 @@
         <!--Icon & Style-->
         <link rel="icon" href="../img/favicon.png">
         <meta name="theme-color" content="#5DC8A8">
-        <title>Orinoco - Votre produit</title>
+        <title>Orinoco - Confirmation du panier d'achats</title>
     </head>
     <body>
         <main class="container">
@@ -113,77 +113,44 @@
                     <img src="/public/img/photographie.png" width="100%" height="" alt="">
                 </section>
 
-                <!--Error page when API not respond-->
-                <article class="col-lg-12 error-api">
-                    <h3>
-                        Oops, une erreur s'est produite !
-                    </h3>
-                    <p>
-                        Le site semble momentanément indisponible...
-                    </p>
-                    <p>
-                        Vous pouvez nous joindre à l'e-mail :
-                        <strong>support@orinoco.fr</strong>
-                    </p>
-                    <p>
-                        Vous pouvez également
-                        <a href="">
-                            cliquer ici
-                        </a> 
-                        pour rafraîchir la page et réessayer !
-                    </p>
-                    <p>
-                        Ou contacter le support téléphonique au :
-                        <strong>+33.6.06.06.06.06</strong>
-                    </p>
-                    <img src="../img/handymanNoProduct.gif" alt="">
-                </article>
-
-
-                <article class="col-lg-12 order text-center">
-                    <p class="text-left">
-                        <a href="../../index.html" class="order__back">
-                            <i class="fas fa-chevron-left"></i>
-                            <strong>
-                                RETOUR
-                            </strong>
-                        </a>
-                    </p>
-                    <h4>
-                        Vous êtes sur le point d'ajouter 
-                        <span id="order__name">
-                            <!--Dynamic Javascript Content here-->
-                        </span> 
-                        à votre panier !
-                    </h4>
-                    <img id="order__img">
-                    <p class="order__desc-bloc offset-lg-2 col-lg-8">
-                        Description du produit
-                        <br>
-                        <span id="order__desc">
-                            <!--Dynamic Javascript Content here-->
-                        </span>
-                    </p>
-                    <p class="order__custom">
-                        Personnalisation
-                        <br>
-                        <form>
-                            <select class="order__custom__select" name="custom-product" size="1">
+                <!--Order Confirmation-->
+                <section class="col-lg-12 text-center orderConfirmation">
+                    <h2>
+                        <strong>
+                            Bonjour
+                            <span id="firstName">
                                 <!--Dynamic Javascript Content here-->
-                            </select>
-                        </form>
-                    </p>
-                    <p class="order__price-bloc">
-                        Prix :
-                        <span id="order__price">
+                            </span>
+                            <span id="lastName">
+                                <!--Dynamic Javascript Content here-->
+                            </span>,
+                        </strong>
+                    </h2>
+                    <h3>
+                        Votre commande a bien été prise en compte !
+                    </h3>
+                    <h4>
+                        <strong>
+                            Nous vous remercions pour votre confiance.
+                        </strong>
+                    </h4>
+                    <h5>
+                        L'identifiant de votre commande est le suivant :
+                        <span id="orderID">
                             <!--Dynamic Javascript Content here-->
                         </span>
-                        €
+                    </h5>
+                    <p>
+                        Prix total : 
+                        <strong id="totalPrice">
+                            <!--Dynamic Javascript Content here-->
+                        </strong> €
                     </p>
                     <button>
-                        Ajouter à mon panier
+                        J'accepte avoir noté mon identifiant de commande
                     </button>
-                </article>
+                </section>
+
                 <!--Footer-->
                 <footer class="col-lg-12 text-center footer">
                     <article class="footer__sn">
@@ -273,7 +240,6 @@
                 </footer>
             </div>
         </main>
-        <script src="../js/order.js"></script>
-        <script src="../js/totalProduct.js"></script>
+        <script src="../js/orderConfirmation.js"></script>
     </body>
 </html>

@@ -192,7 +192,6 @@
                             <button class="cart__smry__clear">
                                 <i class="fas fa-trash-alt"></i>
                                 Vider le panier
-                                (-<span><!--Dynamic Javascript Content here--></span>)
                             </button>
                         </article>
                     </section>
@@ -208,7 +207,7 @@
                             </h3>
                         </div>
                         <!--Form-->
-                        <form name="orderForm" onsubmit="formValidation();" class="col-lg-12 cart__contact__form">
+                        <form name="orderForm" class="col-lg-12 cart__contact__form">
                             <div class="row align-items-center">
                                 <div class="offset-lg-3 col-lg-5 text-right">
                                     <label for="last-name">
@@ -221,8 +220,8 @@
                                     <label for="first-name">
                                         Prénom : 
                                     </label>
-                                    <input placeholder="Entrez votre prénom" type="text" name="Name" required>
-                                    <p class="cart__contact__form__error" id="Name"></p>
+                                    <input placeholder="Entrez votre prénom" type="text" name="firstName" required>
+                                    <p class="cart__contact__form__error" id="firstName"></p>
                                 </div>
                                 <div class="offset-lg-3 col-lg-5 text-right">
                                     <label for="email">
@@ -237,13 +236,6 @@
                                     </label>
                                     <input placeholder="Entrez une adresse valide" type="text" name="Address" required>
                                     <p class="cart__contact__form__error" id="Address"></p>
-                                </div>
-                                <div class="offset-lg-3 col-lg-5 text-right">
-                                    <label for="postal-code">
-                                        Code postal : 
-                                    </label>
-                                    <input placeholder="Entrez votre code postal" type="text" name="Postal" required>
-                                    <p class="cart__contact__form__error" id="Postal"></p>
                                 </div>
                                 <div class="offset-lg-3 col-lg-5 text-right">
                                     <label for="city">
@@ -352,6 +344,6 @@
             </div>
         </main>
         <script src="../js/cart.js"></script>
-        <script src="../js/totalProductCart.js"></script>
+        <script src="../js/totalProduct.js"></script>
     </body>
 </html>

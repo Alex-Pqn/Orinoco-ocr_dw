@@ -1,8 +1,6 @@
 
-const url = "http://localhost:3000/api/cameras/"
-
 createArticle = (id, imageUrl, name, description, lenses, price) => {
-    //elements creation
+    //elements creation & selectors
     const main = document.querySelector(".products__list");
     const article = document.createElement("article");
     const imageUrlElement = document.createElement("img");
@@ -44,29 +42,22 @@ createArticle = (id, imageUrl, name, description, lenses, price) => {
     buttonElement.appendChild(buttonText);
 }
 
-//display error page when API not respond
-displayErrorPage = () => {
-    document.querySelector(".error-api").style.display = "block";
-    document.querySelector(".products").style.display = "none";
-}
-
 // CALL, REQUESTS API - GET
 // => http://localhost:3000/api/cameras/
 
 const apiProducts = async function () {
+    const url = "http://localhost:3000/api/cameras/"
     let xhr = new XMLHttpRequest(); //XHR http request creation
     xhr.open("GET", url, true); //request method & url
     xhr.responseType = "json"; //request format modify
     xhr.send(); //send request
-    console.log(this); //display request in console
     xhr.onerror;
     xhr.onreadystatechange = function() {
         const apiStatusReady = this.readyState === 4 && this.status === 200 && xhr.DONE; //status when API is ready
         const apiStatusNotReady = this.status !== 200 && this.status !== 0; //status when API is not ready
-        console.log(this); //display http requests in console
         
-        if (apiStatusReady) { //if API is ready
-            const cameras = this.response; //store API content in "cameras" const
+        if (apiStatusReady) {
+            const cameras = this.response;
 
             for (let i = 0; i < cameras.length; i++) {
                 createArticle( //store the API content in a function called below
@@ -81,9 +72,15 @@ const apiProducts = async function () {
 
         } else if (apiStatusNotReady) { //if API is not ready, return errors + status readyState & http in console
             displayErrorPage();
-            console.error("l'API 'Camera products' n'a pas pu être récuperée.");
-            console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
+            console.error("La requête GET en direction de " + url + " a échouée.");
+            console.error("Résultat de requête API & Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
         };
     };
 }
 apiProducts();
+
+//display error page when API not respond
+displayErrorPage = () => {
+    document.querySelector(".error-api").style.display = "block";
+    document.querySelector(".products").style.display = "none";
+}
