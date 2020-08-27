@@ -2,15 +2,19 @@
 let lenses;
 
 //display information of the selected product (according to url parameter/?id=)
-pageOrderProduct = (imageUrl, name, description, lenses, price) => {
+pageOrderProduct = (imageUrl, name, description, price) => {
     //elements selectors
     const prdctImageUrl = document.getElementById("order__img");
     const prdctName = document.getElementById("order__name");
     const prdctDescription = document.getElementById("order__desc");
     const prdctPrice = document.getElementById("order__price");
+    const prdctButton = document.querySelector(".order button")
 
     //display informations of product in selectors
     prdctImageUrl.src = imageUrl;
+    prdctImageUrl.alt = "Appareil photographique " + name + " du site Orinoco"
+    prdctImageUrl.setAttribute("aria-label", "Appareil photographique " + name + " du site Orinoco")
+    prdctButton.setAttribute("aria-label", "Ajouter au panier l'appareil " + name)
     prdctName.textContent = '"' + name + '"';
     prdctDescription.textContent = description;
     prdctPrice.textContent = price;
@@ -23,9 +27,11 @@ displayCustomListSelect = (lensesOptions) => {
         const custom = document.querySelector(".order__custom__select");
         const option = document.createElement("option");
         //elements attributes
+        custom.setAttribute("aria-label", "Liste déroulante pour personnaliser le produit")
         option.className = ".order__custom__select__option";
         option.value = lensesOptions;
         option.textContent = lensesOptions;
+        option.setAttribute("aria-label", "Sélectionner la personnalisation " + lensesOptions)
         //parents & childs elements
         custom.appendChild(option);
     });

@@ -18,7 +18,10 @@ createArticle = (id, imageUrl, name, description, lenses, price) => {
     const priceText = document.createTextNode("Prix : " + price + " €");
     const buttonText = document.createTextNode("Commander");
     buttonHrefElement.href = "/public/html/order.html?id="+id;
+    buttonElement.setAttribute("aria-label", "Commander l'appareil " + name)
+    imageUrlElement.setAttribute("aria-label", "Appareil photographique " + name + " du site Orinoco")
     imageUrlElement.src = imageUrl;
+    imageUrlElement.alt = "Appareil photographique " + name + " du site Orinoco"
 
     //elements classnames
     article.className = "col-lg-6";
