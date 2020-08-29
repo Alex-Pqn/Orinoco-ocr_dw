@@ -76,7 +76,7 @@ const apiProducts = async function () {
     xhr.responseType = "json"; //request format modify
     xhr.send(); //send request
     xhr.onerror = () => {
-        displayErrorPage();
+        displayErrorPageAPI();
         console.error("La requête GET en direction de " + url + " a échouée.");
         console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
     };
@@ -100,7 +100,6 @@ const apiProducts = async function () {
                             cameras[i].imageUrl,
                             cameras[i].name,
                             cameras[i].description,
-                            cameras[i].lenses,
                             cameras[i].price
                         );
                         displayCustomListSelect(
@@ -125,7 +124,7 @@ const apiProducts = async function () {
             }
 
         } else if (apiStatusNotReady) { //if API is not ready, return errors + status readyState & http in console
-            displayErrorPage();
+            displayErrorPageAPI();
             console.error("La requête GET en direction de " + url + " a échouée.");
             console.error("Résultat de requête API / Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
         };
@@ -134,7 +133,7 @@ const apiProducts = async function () {
 apiProducts()
 
 //display error page when API not respond
-displayErrorPage = () => {
+displayErrorPageAPI = () => {
     document.querySelector(".order").style.display = "none";
     document.querySelector(".error-api").style.display = "block";
 }
