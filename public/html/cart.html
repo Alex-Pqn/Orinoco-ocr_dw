@@ -35,13 +35,13 @@
         <!--Importations & Responsive-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./public/css/prefixed/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/css/prefixed/style.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
         <!--Icon & Style-->
-        <link rel="icon" href="/public/img/favicon.png">
+        <link rel="icon" href="../img/favicon.png">
         <meta name="theme-color" content="#5DC8A8">
-        <title>Orinoco - Votre site d'achats de produits en ligne</title>
+        <title>Orinoco - Panier d'achats</title>
     </head>
     <body>
         <main class="container">
@@ -51,7 +51,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 header__title">
                             <h1>
-                                <a href="">
+                                <a href="./../../index.html">
                                     ORINOCO
                                 </a>
                             </h1>
@@ -65,8 +65,8 @@
                         <nav class="col-lg-5 header__subtitles">
                             <ul class="row">
                                 <li>
-                                    <h2 class="header__subtitles__on">
-                                        <a href="" aria-label="Rafraichir la page actuelle">
+                                    <h2 class="header__subtitles__off">
+                                        <a href="./../../index.html" aria-label="Se rendre sur la page d'accueil">
                                             Accueil
                                         </a>
                                     </h2>
@@ -79,14 +79,14 @@
                                     </h2>
                                 </li>
                                 <li>
-                                    <h2 class="header__subtitles__off" aria-label="Se rendre sur la page Blog">
-                                        <a href="">
+                                    <h2 class="header__subtitles__off">
+                                        <a href="" aria-label="Se rendre sur la page Blog">
                                             Blog
                                         </a>
                                     </h2>
                                 </li>
                                 <li class="row header__subtitles__cart align-items-center">
-                                    <a href="/public/html/cart.html" aria-label="Se rendre sur la page Panier">
+                                    <a href="" aria-label="Rafraichir la page actuelle">
                                         <i class="fas fa-cart-arrow-down"></i>
                                         <strong class="header__subtitles__total-orders">
                                             <!--Dynamic Javascript Content here-->
@@ -107,60 +107,155 @@
                             </span>
                         </h3>
                         <h4>
-                            Matériel, accessoires et lentilles photographique
+                            Matériel photographique, accessoires et meubles
                         </h4>
                     </div>
-                    <img src="public/img/photographie.png" width="100" alt="Présentation du site internet Orinoco" aria-label="Appareil photo présentant le site internet Orinoco">
+                    <img src="/public/img/photographie.png" width="100" alt="Présentation du site internet Orinoco" aria-label="Appareil photo présentant le site internet Orinoco">
                 </section>
 
-                <!--Error page when API not respond-->
-                <section class="col-lg-12 error-api">
+                <!--Error page when there is nothing in cart-->
+                <section class="col-lg-12 error-empty">
                     <h3>
                         Oops, une erreur s'est produite !
                     </h3>
                     <p>
-                        Le site semble momentanément indisponible...
+                        Votre panier semble vide...
                     </p>
                     <p>
-                        Vous pouvez nous joindre à l'e-mail :
-                        <strong>support@orinoco.fr</strong>
-                    </p>
-                    <p>
-                        Vous pouvez également
-                        <a href="">
-                            cliquer ici
+                        <a href="../../index.html">
+                            Cliquez ici
                         </a> 
-                        pour rafraîchir la page et réessayer !
+                        pour ajouter dès maintenant un produit :D
                     </p>
-                    <p>
-                        Ou contacter le support téléphonique au :
-                        <strong>+33.6.06.06.06.06</strong>
-                    </p>
-                    <img src="public/img/handymanNoProduct.gif" alt="Gif handyman du site Orinoco">
+                    <img src="./../img/handymanNoProduct.gif" alt="Gif handyman du site Orinoco">
                 </section>
 
-                <!--Products-->
-                <section class="col-lg-12 products text-center">
-                    <h3>
-                        <strong>
-                            NOS PRODUITS
-                        </strong>
-                    </h3>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h4>
-                                <strong>
-                                    CAMÉRAS VINTAGE
-                                </strong>
-                            </h4>
-                            <div class="products__list row">
+                <!--Cart-->
+                <div class="col-lg-12 cart text-center">
+                    <!--Summary-->
+                    <section class="row cart__smry">
+                        <!--Informations-->
+                        <div class="col-lg-12 cart__smry__title">
+                            <h3>
+                                <span>
+                                    Récapitulatif de votre commande
+                                </span>
+                            </h3>
+                        </div>
+                        <article class="col-lg-12 cart__smry__infos">
+                            <div class="row">
+                                <div class="offset-lg-1 col-lg-2 text-left">
+                                    <h4>
+                                        Produit
+                                    </h4>
+                                </div>
+                                <div class="offset-lg-1 col-lg-3 text-left">
+                                    <h4>
+                                        <span>
+                                            Personnalisation
+                                        </span>
+                                    </h4>
+                                </div>
+                                <div class="offset-lg-1 col-lg-1 text-left">
+                                    <h4>
+                                        Prix
+                                    </h4>
+                                </div>
+                            </div>
+                        </article>
+                        <!--Products-->
+                        <article class="col-lg-12">
+                            <div class="row cart__smry__products">
                                 <!--Dynamic Javascript Content here-->
                             </div>
+                        </article>
+                        <!--Total price-->
+                        <article class="col-lg-12 cart__smry__total-price">
+                            <div class="row align-items-center">
+                                <div class="offset-lg-3 col-lg-3 align-center">
+                                    <h5>
+                                        Prix total
+                                    </h5>
+                                </div>
+                                <div class="offset-lg-1 col-lg-5 text-left">
+                                    <h5>
+                                        <span>
+                                            <!--Dynamic Javascript Content here-->
+                                        </span>
+                                        €
+                                    </h5>
+                                </div>
+                            </div>
+                        </article>
+                        <!--Cart clear-->
+                        <article class="col-lg-12">
+                            <button class="cart__smry__clear" aria-label="Vider totalement le panier">
+                                <i class="fas fa-trash-alt"></i>
+                                Vider le panier
+                            </button>
+                        </article>
+                    </section>
+
+                    <!--User informations-->
+                    <section class="cart__contact">
+                        <!--Title-->
+                        <div class="col-lg-12 cart__contact__title">
+                            <h3>
+                                <span>
+                                    Vos coordonnées
+                                </span>
+                            </h3>
                         </div>
-                    </div>
-                </section>
+                        <!--Form-->
+                        <form name="orderForm" class="col-lg-12 cart__contact__form">
+                            <div class="row align-items-center">
+                                <div class="offset-lg-3 col-lg-5 text-right">
+                                    <label>
+                                        Nom : 
+                                    </label>
+                                    <input placeholder="Entrez votre nom" value="test" aria-label="Entrez votre nom" type="text" name="lastName" required>
+                                    <p class="cart__contact__form__error" id="lastName"></p>
+                                </div>
+                                <div class="offset-lg-3 col-lg-5 text-right">
+                                    <label>
+                                        Prénom : 
+                                    </label>
+                                    <input placeholder="Entrez votre prénom" value="test" aria-label="Entrez votre prénom" type="text" name="firstName" required>
+                                    <p class="cart__contact__form__error" id="firstName"></p>
+                                </div>
+                                <div class="offset-lg-3 col-lg-5 text-right">
+                                    <label>
+                                        E-mail : 
+                                    </label>
+                                    <input placeholder="Entrez un e-mail valide" value="test@gmail.com" aria-label="Entrez un e-mail valide" type="email" name="Email" required>
+                                    <p class="cart__contact__form__error" id="Email"></p>
+                                </div>
+                                <div class="offset-lg-3 col-lg-5 text-right">
+                                    <label>
+                                        Adresse : 
+                                    </label>
+                                    <input placeholder="Entrez une adresse valide" value="testtest" aria-label="Entrez une adresse valide" type="text" name="Address" required>
+                                    <p class="cart__contact__form__error" id="Address"></p>
+                                </div>
+                                <div class="offset-lg-3 col-lg-5 text-right">
+                                    <label>
+                                        Ville : 
+                                    </label>
+                                    <input placeholder="Entrez le nom de votre ville" value="test" aria-label="Entrez le nom de votre ville" type="text" name="City" required>
+                                    <p class="cart__contact__form__error" id="City"></p>
+                                </div>
+                            </div>
+                            <!--Submit button-->
+                            <div class="offset-lg-3 col-lg-6 cart__contact__form__btn-submit">
+                                <input id="btn-submit-cart" type="submit" value="Valider ma commande" aria-label="Envoyer le formulaire et valider ma commande">
+                            </div>
+                        </form>
+                    </section>
+                </div>
+
                 <!--Footer-->
                 <footer class="col-lg-12 text-center footer">
+                    <!--Social networks-->
                     <article class="footer__sn">
                         <a href="">
                             <i class="fab fa-instagram" aria-label="Se rendre sur la page Instagram de Orinoco" title="Page Instagram de Orinoco"></i>
@@ -238,7 +333,7 @@
                         </div>
                     </article>
                     <article class="col-lg-12 footer__copyright">
-                        <img src="public/img/favicon.png" alt="Logo de Orinoco">
+                        <img src="/public/img/favicon.png" alt="Logo de Orinoco">
                         <p>
                             <span>
                                 © 2020 Orinoco, Inc.
@@ -252,9 +347,9 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=àremplir"></script> <!-- à remplir -->
 		<script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '  à remplir  ');</script> <!-- à remplir -->
         <script async src="https://www.google-analytics.com/analytics.js"></script>
-        
+
         <!--Scripts Orinoco-->
-        <script src="/public/js/index.js"></script>
-        <script src="/public/js/totalProduct.js"></script>
+        <script src="../js/cart.js"></script>
+        <script src="../js/totalProduct.js"></script>
     </body>
 </html>

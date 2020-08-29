@@ -1,27 +1,39 @@
 
-//Panier page
-.panier {
+//Cart page
+
+.cart {
     margin-top: 25px;
     margin-bottom: 50px;
 
-    &__recap {
+    &__smry {
         &__title {
             margin-top: 25px;
-            margin-bottom: 20px;
-            & h3 {
-                font-size: 2em;
-                & span {
-                    padding-bottom: 3px;
-                    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-                }
-            }
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-decoration: underline;
         }
         & p {
-            font-size: 1.2em;
+            font-size: 1.25em;
         }
         &__infos {
-            margin-top: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            & div {
+                padding: 0;
+            }
+        }
+        &__products {
+            margin-bottom: 20px;
+            &__container {
+                width: 100%;
+                & button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    & img {
+                        width: 14px;
+                    }
+                }
+            }
         }
         &__total-price {
             & h5 {
@@ -34,8 +46,8 @@
         }
         &__clear {
             background-color: rgba(0, 0, 0, 0.11);
-            margin-top: 15px;
-            width: 175px;
+            margin-top: 30px;
+            width: 200px;
             height: 35px;
             & i {
                 padding-right: 6px;
@@ -43,25 +55,14 @@
             }
         }
     }
-    &__user-infos {
+    &__contact {
+        margin-bottom: 30px;
         &__title {
-            padding-top: 20px;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            & h3 {
-                font-size: 2em;
-                & span {
-                    padding-bottom: 3px;
-                    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-                }
-            }
+            margin: 75px 0 30px;
+            font-size: 2em;
+            text-decoration: underline;
         }
         &__form {
-            padding: 25px;
-            & p {
-                font-size: 1.1em;
-                line-height: 40px;
-            }
             & label {
                 text-align: left;
                 margin: 0;
@@ -75,8 +76,13 @@
                 font-size: .87em;
                 color: rgb(71, 71, 71);
             }
+            &__error {
+                color: rgb(175, 0, 0);
+                padding: 3px 0 5px;
+                font-size: .95em!important;
+            }
             &__btn-submit {
-                margin-top: 25px;
+                margin-top: -5px;
             }
         }
     }

@@ -1,31 +1,59 @@
 
 .header {
     padding: 30px;
-    background-color: $backgrnd-color-h-f;
+    background-color: $backgrnd-color-h;
     border-top: 7px solid $border-color-h;
     border-bottom: 7px solid $border-color-h;
     &__title {
         & h1 {
-            letter-spacing: 7px;
+            letter-spacing: 8px;
+            margin-left: 15px!important;
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2em;
             text-shadow: 3px 3px 30px rgba(0, 0, 0, 0.5);
             & a {
                 color: black; 
             }
         }
     }
+    &__search {
+        text-align: right;
+        & input {
+            height: 35px;
+            padding: 0 12px;
+            margin-left: 10px;
+        }
+        & label i {
+            font-size: 1.1em;
+        }
+    }
     &__subtitles {
+        display: flex;
+        justify-content: flex-end;
+        &__cart {
+            margin-left: 2px!important;
+            & a {
+                &:hover {
+                    opacity: .85;
+                }
+            }
+            & i {
+                font-size: 1.8em;
+                padding-right: 2px;
+                color: rgb(0, 96, 223);
+            }
+        }
         & li {
             list-style-type: none;
+            margin-right: 15px;
         }
         & ul {
             margin: 0;
         }
         & h2 {
             margin: 0;
-            font-size: 1.7em;
-            margin-right: 25px;
+            font-size: 1.5em;
+            margin-right: 10px;
             padding-bottom: 2px;
             & a {
                 color: black; 
@@ -34,8 +62,9 @@
         &__on {
             border-bottom: 3px solid black;
         }
-        &__off  {
-
+        &__total-orders {
+            color: rgb(0, 89, 255);
+            font-size: 1.05em;
         }
     }
 }

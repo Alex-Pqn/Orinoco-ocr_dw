@@ -35,13 +35,13 @@
         <!--Importations & Responsive-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./public/css/prefixed/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/css/prefixed/style.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
         <!--Icon & Style-->
-        <link rel="icon" href="/public/img/favicon.png">
+        <link rel="icon" href="../img/favicon.png">
         <meta name="theme-color" content="#5DC8A8">
-        <title>Orinoco - Votre site d'achats de produits en ligne</title>
+        <title>Orinoco - Votre produit</title>
     </head>
     <body>
         <main class="container">
@@ -51,7 +51,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 header__title">
                             <h1>
-                                <a href="">
+                                <a href="./../../index.html">
                                     ORINOCO
                                 </a>
                             </h1>
@@ -65,8 +65,8 @@
                         <nav class="col-lg-5 header__subtitles">
                             <ul class="row">
                                 <li>
-                                    <h2 class="header__subtitles__on">
-                                        <a href="" aria-label="Rafraichir la page actuelle">
+                                    <h2 class="header__subtitles__off">
+                                        <a href="./../../index.html" aria-label="Se rendre sur la page d'accueil">
                                             Accueil
                                         </a>
                                     </h2>
@@ -79,8 +79,8 @@
                                     </h2>
                                 </li>
                                 <li>
-                                    <h2 class="header__subtitles__off" aria-label="Se rendre sur la page Blog">
-                                        <a href="">
+                                    <h2 class="header__subtitles__off">
+                                        <a href="" aria-label="Se rendre sur la page Blog">
                                             Blog
                                         </a>
                                     </h2>
@@ -107,10 +107,10 @@
                             </span>
                         </h3>
                         <h4>
-                            Matériel, accessoires et lentilles photographique
+                            Matériel photographique, accessoires et meubles
                         </h4>
                     </div>
-                    <img src="public/img/photographie.png" width="100" alt="Présentation du site internet Orinoco" aria-label="Appareil photo présentant le site internet Orinoco">
+                    <img src="/public/img/photographie.png" width="100" alt="Présentation du site internet Orinoco" aria-label="Appareil photo présentant le site internet Orinoco">
                 </section>
 
                 <!--Error page when API not respond-->
@@ -136,28 +136,52 @@
                         Ou contacter le support téléphonique au :
                         <strong>+33.6.06.06.06.06</strong>
                     </p>
-                    <img src="public/img/handymanNoProduct.gif" alt="Gif handyman du site Orinoco">
+                    <img src="../img/handymanNoProduct.gif" alt="Gif handyman du site Orinoco">
                 </section>
 
-                <!--Products-->
-                <section class="col-lg-12 products text-center">
-                    <h3>
-                        <strong>
-                            NOS PRODUITS
-                        </strong>
-                    </h3>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h4>
-                                <strong>
-                                    CAMÉRAS VINTAGE
-                                </strong>
-                            </h4>
-                            <div class="products__list row">
+                <section class="col-lg-12 order text-center">
+                    <p class="text-left">
+                        <a href="../../index.html" class="order__back">
+                            <i class="fas fa-chevron-left"></i>
+                            <strong>
+                                RETOUR
+                            </strong>
+                        </a>
+                    </p>
+                    <h4>
+                        Vous êtes sur le point d'ajouter 
+                        <span id="order__name">
+                            <!--Dynamic Javascript Content here-->
+                        </span> 
+                        à votre panier !
+                    </h4>
+                    <img src="" alt="Dynamic Javascript Content" id="order__img">
+                    <p class="order__desc-bloc offset-lg-2 col-lg-8">
+                        Description du produit
+                        <br>
+                        <span id="order__desc">
+                            <!--Dynamic Javascript Content here-->
+                        </span>
+                    </p>
+                    <p class="order__custom">
+                        Personnalisation
+                        <br>
+                        <form>
+                            <select class="order__custom__select" name="custom-product" size="1">
                                 <!--Dynamic Javascript Content here-->
-                            </div>
-                        </div>
-                    </div>
+                            </select>
+                        </form>
+                    </p>
+                    <p class="order__price-bloc">
+                        Prix :
+                        <span id="order__price">
+                            <!--Dynamic Javascript Content here-->
+                        </span>
+                        €
+                    </p>
+                    <button>
+                        Ajouter à mon panier
+                    </button>
                 </section>
                 <!--Footer-->
                 <footer class="col-lg-12 text-center footer">
@@ -238,7 +262,7 @@
                         </div>
                     </article>
                     <article class="col-lg-12 footer__copyright">
-                        <img src="public/img/favicon.png" alt="Logo de Orinoco">
+                        <img src="/public/img/favicon.png" alt="Logo de Orinoco">
                         <p>
                             <span>
                                 © 2020 Orinoco, Inc.
@@ -252,9 +276,9 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=àremplir"></script> <!-- à remplir -->
 		<script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '  à remplir  ');</script> <!-- à remplir -->
         <script async src="https://www.google-analytics.com/analytics.js"></script>
-        
+
         <!--Scripts Orinoco-->
-        <script src="/public/js/index.js"></script>
-        <script src="/public/js/totalProduct.js"></script>
+        <script src="../js/order.js"></script>
+        <script src="../js/totalProduct.js"></script>
     </body>
 </html>

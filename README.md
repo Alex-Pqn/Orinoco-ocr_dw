@@ -1,6 +1,6 @@
 # Orinoco #
 
-This is the back end server for Project 5 of the Junior Web Developer path.
+This is the front end part of OpenClassrooms project 5.
 
 ### Prerequisites ###
 
@@ -13,3 +13,10 @@ can then run the server with `node server`.
 The server should run on `localhost` with default port `3000`. If the
 server runs on another port for any reason, this is printed to the
 console when the server starts, e.g. `Listening on port 3001`.
+
+For an optimal start-up, run the scripts that are with ("sass" and "prefix")
+sass script : "npm install sass -g"
+prefix script : "npm install autoprefixer postcss postcss-cli -g"
+
+### Start-up commands ###
+"node server", "run sass" and "run prefix"

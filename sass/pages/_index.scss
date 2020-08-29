@@ -3,7 +3,7 @@
 
 .pres {
     background-color: rgb(80, 80, 80);
-    border-bottom: 8px solid $border-color-prdcts;
+    border-bottom: 8px solid rgb(173, 173, 173);
     padding: 40px;
     &__bloc-title {
         position: absolute;
@@ -36,36 +36,38 @@
 .products {
     & h3 {
         margin-top: 45px;
-        font-size: 2.7em;
-        & span {
-            padding-bottom: 3px;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-        }
+        font-size: 3.1em;
+        opacity: .4;
+        letter-spacing: 10px;
+        word-spacing: 6px;
     }
     & h4 {
-        opacity: .9;
-        margin-top: 45px;
-        margin-bottom: 25px;
+        font-size: 1.9em;
+        margin: -5px 0 35px 4.5px;
+        letter-spacing: 13.8px;
     }
     &__list {
         & article {
-            padding: 30px 0 23px 0;
-            margin-bottom: 20px;
-            background-color: rgba(184, 184, 184, 0.45);
+            padding: 30px;
+            margin-bottom: 25px;
         }
         & img {
             margin: 0 15px 25px 15px;
-            box-shadow: 0 0 10px black;
-            width: 35%;
+            box-shadow: 0 0 7px black;
+            width: 60%;
         }
         & button {
-            margin: 10px 0;
+            margin: 5px 0;
             padding: 7px 15px;
             font-size: 1em;
         }
         & h5 {
+            padding: 15px;
+            background-color: rgb(248, 248, 248);
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
             color: rgb(59, 59, 59);
-            margin-bottom: 20px;
+            margin-bottom: 32px;
             font-size: 1.5em;
         }
     }

@@ -7,10 +7,12 @@
 @import "./components/scrollbar";
 @import "./components/animations";
 @import "./components/buttons";
+@import "./components/errors";
 
 @import "./layout/header";
 @import "./layout/footer";
 
 @import "./pages/index";
-@import "./pages/panier";
-@import "./pages/product";
+@import "./pages/cart";
+@import "./pages/order";
+@import "./pages/orderConfirmation";

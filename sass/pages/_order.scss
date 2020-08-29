@@ -1,7 +1,8 @@
 
 //Product page
-.products-order {
-    background-color: rgba(216, 216, 216, 0.8);
+
+.order {
+    background-color: rgb(245, 245, 245);
     padding: 32px 0 40px 0;
 
     & h4 {
@@ -10,7 +11,6 @@
         border-bottom: 1px solid black;
     }
     & button {
-        margin: 3px 0;
         padding: 7px 15px;
         font-size: 1em;
     }
@@ -20,7 +20,20 @@
         border-radius: 10px;
         box-shadow: 1px 2.5px 10px rgba(0, 0, 0, 0.7);
     }
+    &__back {
+        padding-left: 15px;
+        letter-spacing: 7px;
+        opacity: .1;
+        font-size: 2.5em;
+        transition-property: all;
+        transition-duration: .3s;
+        &:hover {
+            color: black;
+            opacity: .25;
+        }
+    }
     &__desc-bloc {
+        margin-top: 15px;
         font-size: 1.3em;
         color: black;
         & span {
@@ -28,21 +41,35 @@
             color: rgba(0, 0, 0, 0.68);
         }
     }
-    &__custom-bloc {
+    &__custom {
         font-size: 1.15em;
         color: black;
+        margin-top: 25px;
         margin-bottom: 8px;
         & span {
             font-size: .85em;
             color: rgba(0, 0, 0, 0.68);
         }
+        &__select {
+            border-radius: 5px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.05);
+            font-size: 1.1em;
+            padding: .4em;
+            & option {
+                color: rgba(0, 0, 0, 0.7);
+                background-color: rgba(0, 0, 0, 0.07);
+                border-color: rgba(0, 0, 0, 0.3);
+            }
+        }
     }
     &__price-bloc {
         font-size: 1.15em;
         color: rgba(0, 0, 0, 0.75);
-        margin-top: 20px;
+        margin-top: 30px;
         & span {
             color: black;
         }
     }
 }
+

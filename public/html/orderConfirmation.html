@@ -15,7 +15,7 @@
         <meta name="publisher" content="Orinoco - contact.orinoco@gmail.com">
         <!--Global Meta-->
         <meta name="description" content="Orinoco vous mets à disposition une multitude d'accessoires, lentilles et matériel photographiques, disponibles à l'achats, à tout moment de la journée.">
-        <meta name="robots" content="index,follow">
+        <meta name="robots" content="noindex,nofollow">
         <!--Opengraph-->
         <meta property="og:site_name" content="Orinoco">
         <meta property="og:title" content="">
@@ -35,13 +35,13 @@
         <!--Importations & Responsive-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./public/css/prefixed/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/css/prefixed/style.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
         <!--Icon & Style-->
-        <link rel="icon" href="/public/img/favicon.png">
+        <link rel="icon" href="../img/favicon.png">
         <meta name="theme-color" content="#5DC8A8">
-        <title>Orinoco - Votre site d'achats de produits en ligne</title>
+        <title>Orinoco - Commande confirmée</title>
     </head>
     <body>
         <main class="container">
@@ -51,7 +51,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 header__title">
                             <h1>
-                                <a href="">
+                                <a href="./../../index.html">
                                     ORINOCO
                                 </a>
                             </h1>
@@ -65,8 +65,8 @@
                         <nav class="col-lg-5 header__subtitles">
                             <ul class="row">
                                 <li>
-                                    <h2 class="header__subtitles__on">
-                                        <a href="" aria-label="Rafraichir la page actuelle">
+                                    <h2 class="header__subtitles__off">
+                                        <a href="./../../index.html" aria-label="Se rendre sur la page d'accueil">
                                             Accueil
                                         </a>
                                     </h2>
@@ -107,58 +107,50 @@
                             </span>
                         </h3>
                         <h4>
-                            Matériel, accessoires et lentilles photographique
+                            Matériel photographique, accessoires et meubles
                         </h4>
                     </div>
-                    <img src="public/img/photographie.png" width="100" alt="Présentation du site internet Orinoco" aria-label="Appareil photo présentant le site internet Orinoco">
+                    <img src="/public/img/photographie.png" width="100" alt="Présentation du site internet Orinoco" aria-label="Appareil photo présentant le site internet Orinoco">
                 </section>
 
-                <!--Error page when API not respond-->
-                <section class="col-lg-12 error-api">
-                    <h3>
-                        Oops, une erreur s'est produite !
-                    </h3>
-                    <p>
-                        Le site semble momentanément indisponible...
-                    </p>
-                    <p>
-                        Vous pouvez nous joindre à l'e-mail :
-                        <strong>support@orinoco.fr</strong>
-                    </p>
-                    <p>
-                        Vous pouvez également
-                        <a href="">
-                            cliquer ici
-                        </a> 
-                        pour rafraîchir la page et réessayer !
-                    </p>
-                    <p>
-                        Ou contacter le support téléphonique au :
-                        <strong>+33.6.06.06.06.06</strong>
-                    </p>
-                    <img src="public/img/handymanNoProduct.gif" alt="Gif handyman du site Orinoco">
-                </section>
-
-                <!--Products-->
-                <section class="col-lg-12 products text-center">
-                    <h3>
+                <!--Order Confirmation-->
+                <section class="col-lg-12 text-center orderConfirmation">
+                    <h2>
                         <strong>
-                            NOS PRODUITS
-                        </strong>
-                    </h3>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h4>
-                                <strong>
-                                    CAMÉRAS VINTAGE
-                                </strong>
-                            </h4>
-                            <div class="products__list row">
+                            Bonjour
+                            <span id="firstName">
                                 <!--Dynamic Javascript Content here-->
-                            </div>
-                        </div>
-                    </div>
+                            </span>
+                            <span id="lastName">
+                                <!--Dynamic Javascript Content here-->
+                            </span>,
+                        </strong>
+                    </h2>
+                    <h3>
+                        Votre commande a bien été prise en compte !
+                    </h3>
+                    <h4>
+                        <strong>
+                            Nous vous remercions pour votre confiance.
+                        </strong>
+                    </h4>
+                    <h5>
+                        L'identifiant de votre commande est le suivant :
+                        <span id="orderID">
+                            <!--Dynamic Javascript Content here-->
+                        </span>
+                    </h5>
+                    <p>
+                        Prix total : 
+                        <strong id="totalPrice">
+                            <!--Dynamic Javascript Content here-->
+                        </strong> €
+                    </p>
+                    <button>
+                        J'accepte avoir noté mon identifiant de commande
+                    </button>
                 </section>
+
                 <!--Footer-->
                 <footer class="col-lg-12 text-center footer">
                     <article class="footer__sn">
@@ -238,7 +230,7 @@
                         </div>
                     </article>
                     <article class="col-lg-12 footer__copyright">
-                        <img src="public/img/favicon.png" alt="Logo de Orinoco">
+                        <img src="/public/img/favicon.png" alt="Logo de Orinoco">
                         <p>
                             <span>
                                 © 2020 Orinoco, Inc.
@@ -252,9 +244,8 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=àremplir"></script> <!-- à remplir -->
 		<script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '  à remplir  ');</script> <!-- à remplir -->
         <script async src="https://www.google-analytics.com/analytics.js"></script>
-        
+
         <!--Scripts Orinoco-->
-        <script src="/public/js/index.js"></script>
-        <script src="/public/js/totalProduct.js"></script>
+        <script src="../js/orderConfirmation.js"></script>
     </body>
 </html>
