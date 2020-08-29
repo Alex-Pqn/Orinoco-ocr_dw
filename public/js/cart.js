@@ -6,7 +6,7 @@ const orders = JSON.parse(localStorage.getItem('orders')); //get "orders" array 
 const prices = []; //declare array to store all the prices (in the cart) and make the total price in "totalPrice" function
 
 //create html&css to display products in "orders" array localStorage in cart page
-createElement = (name, lensesChoice, price, index) => {
+createElement = (name, lenses, price, index) => {
     //elements creation & selectors
     const main = document.querySelector(".cart__smry__products");
     const container = document.createElement("div");
@@ -15,7 +15,7 @@ createElement = (name, lensesChoice, price, index) => {
     const priceElement = document.createElement("p");
     const buttonElement = document.createElement("button");
     const nameText = document.createTextNode(name);
-    const lensesText = document.createTextNode(lensesChoice);
+    const lensesText = document.createTextNode(lenses);
     const priceText = document.createTextNode(price + " €");
     const crossImg = document.createElement("img");
 
@@ -73,7 +73,7 @@ totalPrice = () => {
     main.appendChild(totalPriceText);
 }
 
-//remove the "orders" array in localStorage when click on the "Vider le panier (-x)" button
+//remove the "orders" array in localStorage when click on the "Vider le panier" button
 clearAllProducts = () => {
     const button = document.querySelector(".cart__smry__clear");
 
@@ -250,21 +250,26 @@ postMethod = (products, contact) => {
     };
 
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
+    xhr.open("POST", url, false);
     xhr.setRequestHeader('Content-type', 'application/json');
-    xhr.onerror
-    xhr.onload = () => {
-        localStorage.removeItem('orders');
-        responseText = xhr.responseText;
-        localStorage.setItem("responseTextAPI", responseText); //store the response of the API in localStorage
-    };
+    xhr.onerror = () => {
+        console.error("La requête POST en direction de " + url + " a échouée.");
+        console.error("Résultat de requête API & Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
+    }
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 201) {
+            localStorage.removeItem('orders');
+            responseText = xhr.responseText;
+            localStorage.setItem("responseTextAPI", responseText); //store the response of the API in localStorage
+        }
+    }
 
     xhr.send(JSON.stringify(params)); //stringify the "products" array and contact "object" then send in the API
-    alert('success')
 }
 
 //display error page when nothing in the cart
-displayErrorPage = () => {
+errorPageEmptyCart = () => {
     document.querySelector(".error-empty").style.display = "block";
     document.querySelector(".cart").style.display = "none";
 }
@@ -276,7 +281,7 @@ if (responseTextAPI != undefined) { //if there is an order waiting to be "accept
     window.location.replace("orderConfirmation.html");
 }
 else if (orders == undefined) { //if there is nothing products in the cart, display error page
-    displayErrorPage();
+    errorPageEmptyCart();
 }
 else { //if there is at least one element in localStorage "orders" array (= minimum one product in cart)
     const submitCartButton = document.querySelector(".cart__contact__form__btn-submit input");

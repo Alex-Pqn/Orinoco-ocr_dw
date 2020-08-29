@@ -54,7 +54,11 @@ const apiProducts = async function () {
     xhr.open("GET", url, true); //request method & url
     xhr.responseType = "json"; //request format modify
     xhr.send(); //send request
-    xhr.onerror;
+    xhr.onerror = () => {
+        displayErrorPage();
+        console.error("La requête GET en direction de " + url + " a échouée.");
+        console.error("Résultat de requête API & Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
+    };
     xhr.onreadystatechange = function() {
         const apiStatusReady = this.readyState === 4 && this.status === 200 && xhr.DONE; //status when API is ready
         const apiStatusNotReady = this.status !== 200 && this.status !== 0; //status when API is not ready
@@ -77,8 +81,8 @@ const apiProducts = async function () {
             displayErrorPage();
             console.error("La requête GET en direction de " + url + " a échouée.");
             console.error("Résultat de requête API & Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
-        };
-    };
+        }
+    }
 }
 apiProducts();
 
