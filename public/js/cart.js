@@ -62,15 +62,14 @@ clearProductOfChoice = (indexButton) => {
 
 //calculate and display total price of products in cart (+ set the totalPrice in localStorage for the orderConfirmation page later)
 totalPrice = () => {
-    const main = document.querySelector(".cart__smry__total-price span");
     const reducer = (accumulator, currentValue) => accumulator + currentValue; //declare reducer for calculate the total price (addition)
-
     const totalPrice = prices.reduce(reducer); //get all the prices in cart (stored in "prices" array) and calculate the total
+    
+    const main = document.querySelector(".cart__smry__total-price span");
     const totalPriceText = document.createTextNode(totalPrice);
+    main.appendChild(totalPriceText);
 
     localStorage.setItem('totalPrice', totalPrice) //store the totalPrice in localStorage for the orderConfirmation page later
-
-    main.appendChild(totalPriceText);
 }
 
 //remove the "orders" array in localStorage when click on the "Vider le panier" button
@@ -256,15 +255,13 @@ postMethod = (products, contact) => {
         console.error("La requête POST en direction de " + url + " a échouée.");
         console.error("Résultat de requête API & Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
     }
-
     xhr.onreadystatechange = function() {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 201) {
-            localStorage.removeItem('orders');
+            localStorage.removeItem('orders'); //deletion of "orders" since it has already been stored in "products" and has been sent to the server
             responseText = xhr.responseText;
             localStorage.setItem("responseTextAPI", responseText); //store the response of the API in localStorage
         }
     }
-
     xhr.send(JSON.stringify(params)); //stringify the "products" array and contact "object" then send in the API
 }
 

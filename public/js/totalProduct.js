@@ -1,12 +1,12 @@
 
-const ordersLength = JSON.parse(localStorage.getItem('orders'));
+const ordersLocalStorage = JSON.parse(localStorage.getItem('orders'));
 
 dislayLengthCartIcon = () => {
     header = document.querySelector(".header__subtitles__total-orders");
-    headerText = document.createTextNode(ordersLength.length);
+    headerText = document.createTextNode(ordersLocalStorage.length);
     header.appendChild(headerText);
 }
 
-if (ordersLength != undefined) {
+if (ordersLocalStorage != undefined) {
     dislayLengthCartIcon();
 }
