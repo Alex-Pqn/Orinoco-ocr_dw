@@ -48,7 +48,7 @@ createArticle = (id, imageUrl, name, description, lenses, price) => {
 // CALL, REQUESTS API - GET
 // => http://localhost:3000/api/cameras/
 
-const apiProducts = async function () {
+const apiProducts = async () => {
     const url = "http://localhost:3000/api/cameras/"
     let xhr = new XMLHttpRequest(); //XHR http request creation
     xhr.open("GET", url, true); //request method & url
@@ -59,7 +59,7 @@ const apiProducts = async function () {
         console.error("La requête GET en direction de " + url + " a échouée.");
         console.error("Résultat de requête API & Statut HTTP : " + this.status + ", état readyState : " + this.readyState);
     };
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         const apiStatusReady = this.readyState === 4 && this.status === 200 && xhr.DONE; //status when API is ready
         const apiStatusNotReady = this.status !== 200 && this.status !== 0; //status when API is not ready
         

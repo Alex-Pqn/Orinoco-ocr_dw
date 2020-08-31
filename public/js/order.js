@@ -69,7 +69,7 @@ finalisationButton = (name, price, id) => {
 // CALL, REQUESTS API - GET
 // => http://localhost:3000/api/cameras/
 
-const apiProducts = async function () {
+const apiProducts = async () => {
     const url = "http://localhost:3000/api/cameras/";
     let xhr = new XMLHttpRequest(); //XHR http request creation
     xhr.open("GET", url, true); //request method & url
