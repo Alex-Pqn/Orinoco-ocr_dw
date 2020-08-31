@@ -274,29 +274,32 @@ errorPageEmptyCart = () => {
 // GENERAL CALLS FUNCTIONS 
 const responseTextAPI = localStorage.getItem("responseTextAPI");
 
-if (responseTextAPI != undefined) { //if there is an order waiting to be "accepted", redirect to "orderConfirmation" page
-    window.location.replace("orderConfirmation.html");
-}
-else if (orders == undefined) { //if there is nothing products in the cart, display error page
-    errorPageEmptyCart();
-}
-else { //if there is at least one element in localStorage "orders" array (= minimum one product in cart)
-    const submitCartButton = document.querySelector(".cart__contact__form__btn-submit input");
-
-    for (let i = 0; i < orders.length; i++) {
-        createElement(
-            orders[i].name,
-            orders[i].lenses,
-            orders[i].price,
-            i
-        );
-        prices.push(orders[i].price) //push prices in "prices" array for calculate them in "totalPrice" function
+cartDisplay = () => {
+    if (responseTextAPI != undefined) { //if there is an order waiting to be "accepted", redirect to "orderConfirmation" page
+        window.location.replace("orderConfirmation.html");
     }
+    else if (orders == undefined) { //if there is nothing products in the cart, display error page
+        errorPageEmptyCart();
+    }
+    else { //if there is at least one element in localStorage "orders" array (= minimum one product in cart)
+        const submitCartButton = document.querySelector(".cart__contact__form__btn-submit input");
 
-    totalPrice(prices);
-    clearAllProducts();
-    submitCartButton.addEventListener('click', event => { //on click "Valider ma commande" button, the functions for the verifications are called
-        storeValuesForm();
-        formValidation();
-    })
+        for (let i = 0; i < orders.length; i++) {
+            createElement(
+                orders[i].name,
+                orders[i].lenses,
+                orders[i].price,
+                i
+            );
+            prices.push(orders[i].price) //push prices in "prices" array for calculate them in "totalPrice" function
+        }
+
+        totalPrice(prices);
+        clearAllProducts();
+        submitCartButton.addEventListener('click', event => { //on click "Valider ma commande" button, the functions for the verifications are called
+            storeValuesForm();
+            formValidation();
+        })
+    }
 }
+cartDisplay();
