@@ -72,3 +72,13 @@
         color: black;
     }
 }
+
+@media (max-width: 991px) {
+    .footer {
+        &__infos {
+            & div {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}

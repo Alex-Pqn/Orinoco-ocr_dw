@@ -26,9 +26,9 @@ createElement = (name, lenses, price, index) => {
 
     //elements classnames
     container.className = "row cart__smry__products__container";
-    nameElement.className = "offset-lg-1 col-lg-2 text-left";
-    lensesElement.className = "offset-lg-1 col-lg-3 text-left";
-    priceElement.className = "offset-lg-1 col-lg-2 text-left";
+    nameElement.className = "offset-lg-1 col-lg-2 col-md-3 col-sm-3 col-3 text-left";
+    lensesElement.className = "offset-lg-1 col-lg-3 col-md-4 col-sm-5 col-6 text-left";
+    priceElement.className = "offset-lg-1 col-lg-1 col-md-3 col-sm-3 col-3 text-left";
     buttonElement.className = "col-lg-1";
 
     //parents & childs elements

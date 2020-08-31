@@ -88,13 +88,51 @@
                                 <li class="row header__subtitles__cart align-items-center">
                                     <a href="" aria-label="Rafraichir la page actuelle">
                                         <i class="fas fa-cart-arrow-down"></i>
-                                        <strong class="header__subtitles__total-orders">
+                                        <strong id="total-orders" class="header__subtitles__total-orders">
                                             <!--Dynamic Javascript Content here-->
                                         </strong>
                                     </a>
                                 </li>
                             </ul>
                         </nav>
+
+                        <!--Mobile responsive nav bar-->
+                        <div class="header__mobile-nav">
+                            <label for="toggle-block">Menu de navigation</label>
+                        
+                            <input id="toggle-block" name="toggle-block" type="checkbox" checked/>
+                        
+                            <nav class="header__mobile-nav__content">
+                                <ul>
+                                    <li>
+                                        <h2>
+                                            <a href="./../../index.html" aria-label="Se rendre sur la page d'accueil">
+                                                Accueil
+                                            </a>
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <h2>
+                                            <a href="" aria-label="Se rendre sur la page Forum">
+                                                Forum
+                                            </a>
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <h2>
+                                            <a href="" aria-label="Se rendre sur la page Blog">
+                                                Blog
+                                            </a>
+                                        </h2>
+                                    </li>
+                                    <li class="header__mobile-nav__content__total-orders">
+                                        <a href="" aria-label="Rafraichir la page actuelle">
+                                            <i class="fas fa-cart-arrow-down"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </header>
 
@@ -107,7 +145,7 @@
                             </span>
                         </h3>
                         <h4>
-                            Matériel photographique, accessoires et meubles
+                            Matériel, accessoires et lentilles photographique
                         </h4>
                     </div>
                     <img src="/public/img/photographie.png" width="100" alt="Présentation du site internet Orinoco" aria-label="Appareil photo présentant le site internet Orinoco">
@@ -144,19 +182,19 @@
                         </div>
                         <article class="col-lg-12 cart__smry__infos">
                             <div class="row">
-                                <div class="offset-lg-1 col-lg-2 text-left">
+                                <div class="offset-lg-1 col-lg-2 col-md-3 col-sm-3 col-3 text-left">
                                     <h4>
                                         Produit
                                     </h4>
                                 </div>
-                                <div class="offset-lg-1 col-lg-3 text-left">
+                                <div class="offset-lg-1 col-lg-3 col-md-4 col-sm-5 col-6 text-left">
                                     <h4>
                                         <span>
                                             Personnalisation
                                         </span>
                                     </h4>
                                 </div>
-                                <div class="offset-lg-1 col-lg-1 text-left">
+                                <div class="offset-lg-1 col-lg-1 col-md-3 col-sm-3 col-3 text-left">
                                     <h4>
                                         Prix
                                     </h4>
@@ -172,12 +210,12 @@
                         <!--Total price-->
                         <article class="col-lg-12 cart__smry__total-price">
                             <div class="row align-items-center">
-                                <div class="offset-lg-3 col-lg-3 align-center">
+                                <div class="offset-lg-3 col-lg-3 col-5 offset-1 align-center">
                                     <h5>
                                         Prix total
                                     </h5>
                                 </div>
-                                <div class="offset-lg-1 col-lg-5 text-left">
+                                <div class="offset-lg-1 col-lg-5 col-6 text-left">
                                     <h5>
                                         <span>
                                             <!--Dynamic Javascript Content here-->
@@ -209,35 +247,35 @@
                         <!--Form-->
                         <form name="orderForm" class="col-lg-12 cart__contact__form">
                             <div class="row align-items-center">
-                                <div class="offset-lg-3 col-lg-5 text-right">
+                                <div class="offset-lg-3 col-lg-5 col-md-9 col-sm-10 col-10 text-right">
                                     <label>
                                         Nom : 
                                     </label>
                                     <input placeholder="Entrez votre nom" aria-label="Entrez votre nom" type="text" name="lastName" required>
                                     <p class="cart__contact__form__error" id="lastName"></p>
                                 </div>
-                                <div class="offset-lg-3 col-lg-5 text-right">
+                                <div class="offset-lg-3 col-lg-5 col-md-9 col-sm-10 col-10 text-right">
                                     <label>
                                         Prénom : 
                                     </label>
                                     <input placeholder="Entrez votre prénom" aria-label="Entrez votre prénom" type="text" name="firstName" required>
                                     <p class="cart__contact__form__error" id="firstName"></p>
                                 </div>
-                                <div class="offset-lg-3 col-lg-5 text-right">
+                                <div class="offset-lg-3 col-lg-5 col-md-9 col-sm-10 col-10 text-right">
                                     <label>
                                         E-mail : 
                                     </label>
                                     <input placeholder="Entrez un e-mail valide" aria-label="Entrez un e-mail valide" type="email" name="Email" required>
                                     <p class="cart__contact__form__error" id="Email"></p>
                                 </div>
-                                <div class="offset-lg-3 col-lg-5 text-right">
+                                <div class="offset-lg-3 col-lg-5 col-md-9 col-sm-10 col-10 text-right">
                                     <label>
                                         Adresse : 
                                     </label>
                                     <input placeholder="Entrez une adresse valide" aria-label="Entrez une adresse valide" type="text" name="Address" required>
                                     <p class="cart__contact__form__error" id="Address"></p>
                                 </div>
-                                <div class="offset-lg-3 col-lg-5 text-right">
+                                <div class="offset-lg-3 col-lg-5 col-md-9 col-sm-10 col-10 text-right">
                                     <label>
                                         Ville : 
                                     </label>

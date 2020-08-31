@@ -4,6 +4,56 @@
     background-color: $backgrnd-color-h;
     border-top: 7px solid $border-color-h;
     border-bottom: 7px solid $border-color-h;
+    
+    #total-orders {
+        color: rgb(0, 89, 255);
+        font-size: 1.05em;
+    }
+
+    &__mobile-nav {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin-left: 33px;
+        & input {
+            display: none;
+        }
+        & label {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgba(0, 0, 0, 0.15);
+            font-size: 1.1em;
+        }
+        &__content {
+            margin: 0;
+            padding-left: 10px;
+            border: none;
+            & strong {
+                color: rgb(0, 89, 255);
+                font-size: 1.05em;
+            }
+            & li {
+                list-style-type: none;
+                margin-right: 15px;
+            }
+            & ul {
+                margin: 0;
+                padding: 0;
+            }
+            & h2 {
+                font-size: 1.6em;
+            }
+            & i {
+                font-size: 1.8em;
+                padding-right: 2px;
+                color: rgb(0, 96, 223);
+            }
+            &__total-orders {
+                margin-top: -20px;
+                margin-bottom: -20px;
+            }
+        }
+    }
+
     &__title {
         & h1 {
             letter-spacing: 8px;
@@ -17,7 +67,6 @@
         }
     }
     &__search {
-        text-align: right;
         & input {
             height: 35px;
             padding: 0 12px;
@@ -62,9 +111,58 @@
         &__on {
             border-bottom: 3px solid black;
         }
-        &__total-orders {
-            color: rgb(0, 89, 255);
-            font-size: 1.05em;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .header {
+        &__title {
+            & h1 {
+                font-size: 1.9em;
+            }
+        }
+        &__search {
+            padding: 0!important;
+            
+            & input {
+                width: 260px;
+            }
+        }
+        &__subtitles {
+            &__cart {
+                & i {
+                    font-size: 1.5em;
+                }
+            }
+            & h2 {
+                font-size: 1.3em;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 991px) {
+    .header {
+        &__mobile-nav {
+            display: initial!important;
+        }
+        &__title {
+            & h1 {
+                font-size: 1.9em;
+            }
+        }
+        &__search {
+            margin: 15px 0;
+            padding: 0!important;
+            & input {
+                width: 240px;
+            }
+            & label i {
+                margin-left: 33px;
+            }
+        }
+        &__subtitles {
+            display: none;
         }
     }
 }

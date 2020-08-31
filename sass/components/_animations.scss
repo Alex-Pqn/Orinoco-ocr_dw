@@ -6,16 +6,32 @@
             color: black;
         }
     }
+    &__mobile-nav {
+        &__content {
+            max-height: 0px;
+            opacity: 0;
+            line-height:100px;
+            border: 1px dotted #fff;
+            margin:2px;
+            transition: all .7s;
+        }
+    }
     &__subtitles {
         &__off {
             border-bottom: 0px solid rgba(255, 255, 255, 0.4);
             transition-property: border-bottom;
-            transition-duration: .1s;
+            transition-duration: .7s;
             &:hover {
                 border-bottom: 3px solid rgba(255, 255, 255, 0.4);
             }
         }
     }
+}
+
+.header__mobile-nav input:checked + .header__mobile-nav__content{
+    max-height: 300px;
+    opacity: 1;
+    transition: all .7s;
 }
 
 //Index

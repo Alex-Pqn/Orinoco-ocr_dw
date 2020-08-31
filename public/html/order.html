@@ -88,13 +88,51 @@
                                 <li class="row header__subtitles__cart align-items-center">
                                     <a href="/public/html/cart.html" aria-label="Se rendre sur la page Panier">
                                         <i class="fas fa-cart-arrow-down"></i>
-                                        <strong class="header__subtitles__total-orders">
+                                        <strong id="total-orders" class="header__subtitles__total-orders">
                                             <!--Dynamic Javascript Content here-->
                                         </strong>
                                     </a>
                                 </li>
                             </ul>
                         </nav>
+
+                        <!--Mobile responsive nav bar-->
+                        <div class="header__mobile-nav">
+                            <label for="toggle-block">Menu de navigation</label>
+                        
+                            <input id="toggle-block" name="toggle-block" type="checkbox" checked/>
+                        
+                            <nav class="header__mobile-nav__content">
+                                <ul>
+                                    <li>
+                                        <h2>
+                                            <a href="./../../index.html" aria-label="Se rendre sur la page d'accueil">
+                                                Accueil
+                                            </a>
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <h2>
+                                            <a href="" aria-label="Se rendre sur la page Forum">
+                                                Forum
+                                            </a>
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <h2>
+                                            <a href="" aria-label="Se rendre sur la page Blog">
+                                                Blog
+                                            </a>
+                                        </h2>
+                                    </li>
+                                    <li class="header__mobile-nav__content__total-orders">
+                                        <a href="/public/html/cart.html" aria-label="Se rendre sur la page Panier">
+                                            <i class="fas fa-cart-arrow-down"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </header>
 
@@ -107,7 +145,7 @@
                             </span>
                         </h3>
                         <h4>
-                            Matériel photographique, accessoires et meubles
+                            Matériel, accessoires et lentilles photographique
                         </h4>
                     </div>
                     <img src="/public/img/photographie.png" width="100" alt="Présentation du site internet Orinoco" aria-label="Appareil photo présentant le site internet Orinoco">
