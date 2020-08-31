@@ -51,10 +51,11 @@
             color: rgba(0, 0, 0, 0.68);
         }
         &__select {
+            margin-top: 8px;
             border-radius: 5px;
             border: 2px solid rgba(0, 0, 0, 0.3);
             background-color: rgba(0, 0, 0, 0.05);
-            font-size: 1.1em;
+            font-size: .97em;
             padding: .4em;
             & option {
                 color: rgba(0, 0, 0, 0.7);
