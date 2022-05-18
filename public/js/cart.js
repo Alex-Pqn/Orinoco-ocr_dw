@@ -48,14 +48,14 @@ createElement = (name, lenses, price, index) => {
 clearProductOfChoice = (indexButton) => {
     orders.splice(indexButton, 1); //deletes the element whose index matches in the orders array
     localStorage.setItem("orders", JSON.stringify(orders)); //re set to make changes
-    location.reload();
+    // location.reload();
 
     //delete "orders" array and "totalPrice" in localStorage if it is empty (the array is empty but remains if we delete the last element in a personalized way)
     if (orders != undefined) {
         if (orders.length === 0) {
             localStorage.removeItem('orders');
             localStorage.removeItem('totalPrice');
-            location.reload();
+            // location.reload();
         }
     }
 }
@@ -79,7 +79,7 @@ clearAllProducts = () => {
     button.addEventListener('click', event => {
         localStorage.removeItem('orders');
         localStorage.removeItem('totalPrice');
-        location.reload();
+        // location.reload();
     })
 }
 
@@ -243,10 +243,13 @@ formSending = () => {
 //the post method API connect the site with API and allow to send informations and products of the user in API (and recover the id of order later)
 postMethod = (products, contact) => {
     const url = "http://localhost:3000/api/cameras/order";
+    console.log(products)
+    console.log(contact)
     const params = {
         "contact": contact,
         "products": products
     };
+    console.log(params)
 
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, false);
@@ -276,7 +279,7 @@ const responseTextAPI = localStorage.getItem("responseTextAPI");
 
 cartDisplay = () => {
     if (responseTextAPI != undefined) { //if there is an order waiting to be "accepted", redirect to "orderConfirmation" page
-        window.location.replace("orderConfirmation.html");
+        // window.location.replace("orderConfirmation.html");
     }
     else if (orders == undefined) { //if there is nothing products in the cart, display error page
         errorPageEmptyCart();
@@ -299,6 +302,7 @@ cartDisplay = () => {
         submitCartButton.addEventListener('click', event => { //on click "Valider ma commande" button, the functions for the verifications are called
             storeValuesForm();
             formValidation();
+            event.preventDefault()
         })
     }
 }
