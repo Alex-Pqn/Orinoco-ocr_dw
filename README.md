@@ -32,7 +32,7 @@ Ensuitez, vous planifierez une suite de tests unitaires pour couvrir au minimum 
 
 You will need to have Node and `npm` installed locally on your machine.
 
-### Installation ###
+### Install ###
 
 Clone this repo. From within the project folder, run `npm install`. You 
 can then run the server with `node server`. 
@@ -44,7 +44,7 @@ For an optimal start-up, run the scripts that are with ("sass" and "prefix")
 sass script : "npm install sass -g"
 prefix script : "npm install autoprefixer postcss postcss-cli -g"
 
-### Start-up commands ###
+### Start ###
 "node server", "run sass" and "run prefix"
 
 ---
