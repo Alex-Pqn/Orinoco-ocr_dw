@@ -5,6 +5,7 @@
 L'objectif ? Se démarquer des grands site e-commerce comme Amazon en créant des applications thématiques ne vendant qu’un seul groupe de produits. Il y a par exemple Oribook pour les livres ou Oritextil pour les vêtements. Dans un premier temps, Paul, le fondateur de l’entreprise, souhaite créer un premier MVP pour démontrer le fonctionnement de ses applications à ses investisseurs. L’équipe est constituée de Jeanne, développeuse back-end travaillant sur les API et vous, pour la partie front-end.
 
 L’application web sera composée de 4 pages :
+
 ● une page de vue sous forme de liste, montrant tous les articles disponibles à la vente ;
 ● une page “produit”, qui affiche de manière dynamique l'élément sélectionné par l'utilisateur et lui permet de personnaliser le produit et de l'ajouter à son panier ;
 ● une page “panier” contenant un résumé des produits dans le panier, le prix total et un formulaire permettant de passer une commande. Les données du formulaire doivent être correctes et bien formatées avant d'être renvoyées au back-end. Par exemple, pas de texte dans les champs date ;
