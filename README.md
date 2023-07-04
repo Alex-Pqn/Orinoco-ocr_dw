@@ -50,9 +50,13 @@ prefix script : "npm install autoprefixer postcss postcss-cli -g"
 ---
 
 ![Site au complet](/public/img/Orinoco.png)
-
-
+<br/>
+<br/>
+<br/>
+<br/>
 ![Commande d'un appareil](/public/img/Orinoco%202.png)
-
-
+<br/>
+<br/>
+<br/>
+<br/>
 ![Validation du panier d'achat](/public/img/Orinoco%203.png)
