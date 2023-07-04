@@ -1,283 +1,366 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" lang="fr">
-    <head>
-        <!--Language & UTF-->
-        <meta charset="utf-8">
-        <meta name="google" content="notranslate"/>
-        <link rel="alternate" href="http://www.orinoco.com" hreflang="x-default">
-        <link rel="alternate" href="http://www.orinoco.com" hreflang="fr-fr">
-        <link rel="alternate" href="http://www.orinoco.com" hreflang="fr-be">
-        <link rel="alternate" href="http://www.orinoco.com" hreflang="fr-ca">
-        <!--URL-->
-        <meta name="identifier-url" content="http://www.orinoco.com">
-        <link rel="canonical" href="http://www.orinoco.com/index"/>
-        <meta name="author" content="Orinoco">
-        <meta name="publisher" content="Orinoco - contact.orinoco@gmail.com">
-        <!--Global Meta-->
-        <meta name="description" content="Orinoco vous mets à disposition une multitude d'accessoires, lentilles et matériel photographiques, disponibles à l'achats, à tout moment de la journée.">
-        <meta name="robots" content="noindex,nofollow">
-        <!--Opengraph-->
-        <meta property="og:site_name" content="Orinoco">
-        <meta property="og:title" content="">
-        <meta property="og:description" content="Orinoco vous mets à disposition une multitude d'accessoires, lentilles et matériel photographiques, disponibles à l'achats, à tout moment de la journée.">
-        <meta property="og:url" content="">
-        <meta property="og:image" content="image/png">
-        <meta property="og:image:type" content="image/png">
-        <!--Twitter cards-->
-        <meta name="twitter:site" content="Orinoco">
-        <meta name="twitter:creator" content="Orinoco">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Orinoco">
-        <meta name="twitter:description" content="Orinoco vous mets à disposition une multitude d'accessoires, lentilles et matériel photographiques, disponibles à l'achats, à tout moment de la journée.">
-        <meta name="twitter:image:src" content="">
-        <!--CDN Fonts-->
-        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
-        <!--Importations & Responsive-->
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/public/css/prefixed/style.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
-        <!--Icon & Style-->
-        <link rel="icon" href="../img/favicon.png">
-        <meta name="theme-color" content="#5DC8A8">
-        <title>Orinoco - Commande confirmée</title>
-    </head>
-    <body>
-        <main class="container">
-            <div class="row">
-                <!--Header-->
-                <header class="col-lg-12 header">
-                    <div class="row align-items-center">
-                        <div class="col-lg-3 header__title">
-                            <h1>
-                                <a href="./../../index.html">
-                                    ORINOCO
-                                </a>
-                            </h1>
-                        </div>
-                        <div class="col-lg-4 header__search">
-                            <label>
-                                <i class="fas fa-search"></i>
-                            </label>
-                            <input maxlength="25" placeholder="Rechercher dans notre catalogue" aria-label="Effectuer une recherche dans la barre de recherche" size="35">
-                        </div>
-                        <nav class="col-lg-5 header__subtitles">
-                            <ul class="row">
-                                <li>
-                                    <h2 class="header__subtitles__off">
-                                        <a href="./../../index.html" aria-label="Se rendre sur la page d'accueil">
-                                            Accueil
-                                        </a>
-                                    </h2>
-                                </li>
-                                <li>
-                                    <h2 class="header__subtitles__off">
-                                        <a href="" aria-label="Se rendre sur la page Forum">
-                                            Forum
-                                        </a>
-                                    </h2>
-                                </li>
-                                <li>
-                                    <h2 class="header__subtitles__off" aria-label="Se rendre sur la page Blog">
-                                        <a href="">
-                                            Blog
-                                        </a>
-                                    </h2>
-                                </li>
-                                <li class="row header__subtitles__cart align-items-center">
-                                    <a href="/public/html/cart.html" aria-label="Se rendre sur la page Panier">
-                                        <i class="fas fa-cart-arrow-down"></i>
-                                        <strong id="total-orders" class="header__subtitles__total-orders">
-                                            <!--Dynamic Javascript Content here-->
-                                        </strong>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!--Mobile responsive nav bar-->
-                        <div class="header__mobile-nav">
-                            <label for="toggle-block">Menu de navigation</label>
-                        
-                            <input id="toggle-block" name="toggle-block" type="checkbox" checked/>
-                        
-                            <nav class="header__mobile-nav__content">
-                                <ul>
-                                    <li>
-                                        <h2>
-                                            <a href="./../../index.html" aria-label="Se rendre sur la page d'accueil">
-                                                Accueil
-                                            </a>
-                                        </h2>
-                                    </li>
-                                    <li>
-                                        <h2>
-                                            <a href="" aria-label="Se rendre sur la page Forum">
-                                                Forum
-                                            </a>
-                                        </h2>
-                                    </li>
-                                    <li>
-                                        <h2 aria-label="Se rendre sur la page Blog">
-                                            <a href="">
-                                                Blog
-                                            </a>
-                                        </h2>
-                                    </li>
-                                    <li class="header__mobile-nav__content__total-orders">
-                                        <a href="/public/html/cart.html" aria-label="Se rendre sur la page Panier">
-                                            <i class="fas fa-cart-arrow-down"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </header>
-
-                <!--Presentation-->
-                <section class="col-lg-12 pres text-center">
-                    <div class="pres__bloc-title">
-                        <h3>
-                            <span>
-                                Votre site d'achats en ligne !
-                            </span>
-                        </h3>
-                        <h4>
-                            Matériel, accessoires et lentilles photographique
-                        </h4>
-                    </div>
-                    <img src="/public/img/photographie.png" width="100" alt="Présentation du site internet Orinoco" aria-label="Appareil photo présentant le site internet Orinoco">
-                </section>
-
-                <!--Order Confirmation-->
-                <section class="col-lg-12 text-center orderConfirmation">
-                    <h2>
-                        <strong>
-                            Bonjour
-                            <span id="firstName">
-                                <!--Dynamic Javascript Content here-->
-                            </span>
-                            <span id="lastName">
-                                <!--Dynamic Javascript Content here-->
-                            </span>,
-                        </strong>
-                    </h2>
-                    <h3>
-                        Votre commande a bien été prise en compte !
-                    </h3>
-                    <h4>
-                        <strong>
-                            Nous vous remercions pour votre confiance.
-                        </strong>
-                    </h4>
-                    <h5>
-                        L'identifiant de votre commande est le suivant :
-                        <span id="orderID">
-                            <!--Dynamic Javascript Content here-->
-                        </span>
-                    </h5>
-                    <p>
-                        Prix total : 
-                        <strong id="totalPrice">
-                            <!--Dynamic Javascript Content here-->
-                        </strong> €
-                    </p>
-                    <button>
-                        J'accepte avoir noté mon identifiant de commande
-                    </button>
-                </section>
-
-                <!--Footer-->
-                <footer class="col-lg-12 text-center footer">
-                    <article class="footer__sn">
-                        <a href="">
-                            <i class="fab fa-instagram" aria-label="Se rendre sur la page Instagram de Orinoco" title="Page Instagram de Orinoco"></i>
-                        </a>
-                        <a href="">
-                            <i class="fab fa-facebook-f" aria-label="Se rendre sur la page Facebook de Orinoco" title="Page Instagram de Facebook"></i>
-                        </a>
-                        <a href="">
-                            <i class="fab fa-pinterest" aria-label="Se rendre sur la page Pinterest de Orinoco" title="Page Pinterest de Orinoco"></i>
-                        </a>
-                        <a href="">
-                            <i class="fab fa-twitter" aria-label="Se rendre sur la page Twitter de Orinoco" title="Page Twitter de Orinoco"></i>
-                        </a>
-                        <a href="">
-                            <i class="fab fa-linkedin-in" aria-label="Se rendre sur la page Linkedin de Orinoco" title="Page Linkedin de Orinoco"></i>
-                        </a>
-                    </article>
-                    <article class="footer__infos row">
-                        <div class="col-lg-4">
-                            <i class="fas fa-info"></i>
-                            <h6>
-                                Informations
-                            </h6>
-                            <p>
-                                <a href="" aria-label="Se rendre sur la page Statut de nos services">Statut de nos services</a>
-                            </p>
-                            <p>
-                                <a href="" aria-label="Se rendre sur la page Conditions générales de vente">Conditions générales de vente</a>
-                            </p>
-                            <p>
-                                <a href="" aria-label="Se rendre sur la page Conditions générales d'utilisation">Conditions générales d'utilisation</a>
-                            </p>
-                            <p>
-                                <a href="" aria-label="Se rendre sur la page Politique de confidentialité">Politique de confientialité</a>
-                            </p>
-                            <p>
-                                <a href="" aria-label="Se rendre sur la page Cookies">Cookies</a>
-                            </p>
-                        </div>
-                        <div class="col-lg-4">
-                            <i class="fas fa-home"></i>
-                            <h6>
-                                Orinoco
-                            </h6>
-                            <p>
-                                <a href="" aria-label="Se rendre sur la page Entreprise">Entreprise</a>
-                            </p>
-                            <p>
-                                <a href="" aria-label="Se rendre sur la page Développeurs">Développeurs</a>
-                            </p>
-                            <p>
-                                <a href="" aria-label="Se rendre sur la page À propos">À propos</a>
-                            </p>
-                            <p>
-                                <a href="" aria-label="Se rendre sur la page API ">API</a>
-                            </p>
-                        </div>
-                        <div class="col-lg-4">
-                            <i class="fas fa-question"></i>
-                            <h6>
-                                Support
-                            </h6>
-                            <p>
-                                <a href="mailto:support@orinoco.fr?subject=Sujet&body=Bonjour," aria-label="Nous contacter par e-mail">Nous contacter</a><br>
-                                <span>
-                                    support@orinoco.fr
-                                </span>
-                            </p>
-                            <p>
-                                <a href="tel:+33606060606" aria-label="Nous contacter par téléphone">Support téléphonique</a><br>
-                                <span>
-                                    +33.6.06.06.06.06
-                                </span>
-                            </p>
-                        </div>
-                    </article>
-                    <article class="col-lg-12 footer__copyright">
-                        <img src="/public/img/favicon.png" alt="Logo de Orinoco">
-                        <p>
-                            <span>
-                                © 2020 Orinoco, Inc.
-                            </span>
-                        </p>
-                    </article>
-                </footer>
+  <head>
+    <!--Language & UTF-->
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate" />
+    <link rel="alternate" href="http://www.orinoco.com" hreflang="x-default" />
+    <link rel="alternate" href="http://www.orinoco.com" hreflang="fr-fr" />
+    <link rel="alternate" href="http://www.orinoco.com" hreflang="fr-be" />
+    <link rel="alternate" href="http://www.orinoco.com" hreflang="fr-ca" />
+    <!--URL-->
+    <meta name="identifier-url" content="http://www.orinoco.com" />
+    <link rel="canonical" href="http://www.orinoco.com/index" />
+    <meta name="author" content="Orinoco" />
+    <meta name="publisher" content="Orinoco - contact.orinoco@gmail.com" />
+    <!--Global Meta-->
+    <meta
+      name="description"
+      content="Orinoco vous mets à disposition une multitude d'accessoires, lentilles et matériel photographiques, disponibles à l'achats, à tout moment de la journée."
+    />
+    <meta name="robots" content="noindex,nofollow" />
+    <!--Opengraph-->
+    <meta property="og:site_name" content="Orinoco" />
+    <meta property="og:title" content="" />
+    <meta
+      property="og:description"
+      content="Orinoco vous mets à disposition une multitude d'accessoires, lentilles et matériel photographiques, disponibles à l'achats, à tout moment de la journée."
+    />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="image/png" />
+    <meta property="og:image:type" content="image/png" />
+    <!--Twitter cards-->
+    <meta name="twitter:site" content="Orinoco" />
+    <meta name="twitter:creator" content="Orinoco" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Orinoco" />
+    <meta
+      name="twitter:description"
+      content="Orinoco vous mets à disposition une multitude d'accessoires, lentilles et matériel photographiques, disponibles à l'achats, à tout moment de la journée."
+    />
+    <meta name="twitter:image:src" content="" />
+    <!--CDN Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--Importations & Responsive-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/css/prefixed/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <!--Icon & Style-->
+    <link rel="icon" href="../img/favicon.png" />
+    <meta name="theme-color" content="#5DC8A8" />
+    <title>Orinoco - Commande confirmée</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="row">
+        <!--Header-->
+        <header class="col-lg-12 header">
+          <div class="row align-items-center">
+            <div class="col-lg-3 header__title">
+              <h1>
+                <a href="./../../index.html"> ORINOCO </a>
+              </h1>
             </div>
-        </main>
-        <!--Scripts Orinoco-->
-        <script src="../js/orderConfirmation.js"></script>
-    </body>
+            <div class="col-lg-4 header__search">
+              <label>
+                <i class="fas fa-search"></i>
+              </label>
+              <input
+                maxlength="25"
+                placeholder="Rechercher dans notre catalogue"
+                aria-label="Effectuer une recherche dans la barre de recherche"
+                size="35"
+              />
+            </div>
+            <nav class="col-lg-5 header__subtitles">
+              <ul class="row">
+                <li>
+                  <h2 class="header__subtitles__off">
+                    <a
+                      href="./../../index.html"
+                      aria-label="Se rendre sur la page d'accueil"
+                    >
+                      Accueil
+                    </a>
+                  </h2>
+                </li>
+                <li>
+                  <h2 class="header__subtitles__off">
+                    <a href="" aria-label="Se rendre sur la page Forum">
+                      Forum
+                    </a>
+                  </h2>
+                </li>
+                <li>
+                  <h2
+                    class="header__subtitles__off"
+                    aria-label="Se rendre sur la page Blog"
+                  >
+                    <a href=""> Blog </a>
+                  </h2>
+                </li>
+                <li class="row header__subtitles__cart align-items-center">
+                  <a
+                    href="/public/html/cart.html"
+                    aria-label="Se rendre sur la page Panier"
+                  >
+                    <i class="fas fa-cart-arrow-down"></i>
+                    <strong
+                      id="total-orders"
+                      class="header__subtitles__total-orders"
+                    >
+                      <!--Dynamic Javascript Content here-->
+                    </strong>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <!--Mobile responsive nav bar-->
+            <div class="header__mobile-nav">
+              <label for="toggle-block">Menu de navigation</label>
+
+              <input
+                id="toggle-block"
+                name="toggle-block"
+                type="checkbox"
+                checked
+              />
+
+              <nav class="header__mobile-nav__content">
+                <ul>
+                  <li>
+                    <h2>
+                      <a
+                        href="./../../index.html"
+                        aria-label="Se rendre sur la page d'accueil"
+                      >
+                        Accueil
+                      </a>
+                    </h2>
+                  </li>
+                  <li>
+                    <h2>
+                      <a href="" aria-label="Se rendre sur la page Forum">
+                        Forum
+                      </a>
+                    </h2>
+                  </li>
+                  <li>
+                    <h2 aria-label="Se rendre sur la page Blog">
+                      <a href=""> Blog </a>
+                    </h2>
+                  </li>
+                  <li class="header__mobile-nav__content__total-orders">
+                    <a
+                      href="/public/html/cart.html"
+                      aria-label="Se rendre sur la page Panier"
+                    >
+                      <i class="fas fa-cart-arrow-down"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <!--Presentation-->
+        <section class="col-lg-12 pres text-center">
+          <div class="pres__bloc-title">
+            <h3>
+              <span> Votre site d'achats en ligne ! </span>
+            </h3>
+            <h4>Matériel, accessoires et lentilles photographique</h4>
+          </div>
+          <img
+            src="/public/img/photographie.png"
+            width="100"
+            alt="Présentation du site internet Orinoco"
+            aria-label="Appareil photo présentant le site internet Orinoco"
+          />
+        </section>
+
+        <!--Order Confirmation-->
+        <section class="col-lg-12 text-center orderConfirmation">
+          <h2>
+            <strong>
+              Bonjour
+              <span id="firstName">
+                <!--Dynamic Javascript Content here-->
+              </span>
+              <span id="lastName">
+                <!--Dynamic Javascript Content here--> </span
+              >,
+            </strong>
+          </h2>
+          <h3>Votre commande a bien été prise en compte !</h3>
+          <h4>
+            <strong> Nous vous remercions pour votre confiance. </strong>
+          </h4>
+          <h5>
+            L'identifiant de votre commande est le suivant :
+            <span id="orderID">
+              <!--Dynamic Javascript Content here-->
+            </span>
+          </h5>
+          <p>
+            Prix total :
+            <strong id="totalPrice">
+              <!--Dynamic Javascript Content here-->
+            </strong>
+            €
+          </p>
+          <button>J'accepte avoir noté mon identifiant de commande</button>
+        </section>
+
+        <!--Footer-->
+        <footer class="col-lg-12 text-center footer">
+          <article class="footer__sn">
+            <a href="">
+              <i
+                class="fab fa-instagram"
+                aria-label="Se rendre sur la page Instagram de Orinoco"
+                title="Page Instagram de Orinoco"
+              ></i>
+            </a>
+            <a href="">
+              <i
+                class="fab fa-facebook-f"
+                aria-label="Se rendre sur la page Facebook de Orinoco"
+                title="Page Instagram de Facebook"
+              ></i>
+            </a>
+            <a href="">
+              <i
+                class="fab fa-pinterest"
+                aria-label="Se rendre sur la page Pinterest de Orinoco"
+                title="Page Pinterest de Orinoco"
+              ></i>
+            </a>
+            <a href="">
+              <i
+                class="fab fa-twitter"
+                aria-label="Se rendre sur la page Twitter de Orinoco"
+                title="Page Twitter de Orinoco"
+              ></i>
+            </a>
+            <a href="">
+              <i
+                class="fab fa-linkedin-in"
+                aria-label="Se rendre sur la page Linkedin de Orinoco"
+                title="Page Linkedin de Orinoco"
+              ></i>
+            </a>
+          </article>
+          <article class="footer__infos row">
+            <div class="col-lg-4">
+              <i class="fas fa-info"></i>
+              <h6>Informations</h6>
+              <p>
+                <a
+                  href=""
+                  aria-label="Se rendre sur la page Statut de nos services"
+                  >Statut de nos services</a
+                >
+              </p>
+              <p>
+                <a
+                  href=""
+                  aria-label="Se rendre sur la page Conditions générales de vente"
+                  >Conditions générales de vente</a
+                >
+              </p>
+              <p>
+                <a
+                  href=""
+                  aria-label="Se rendre sur la page Conditions générales d'utilisation"
+                  >Conditions générales d'utilisation</a
+                >
+              </p>
+              <p>
+                <a
+                  href=""
+                  aria-label="Se rendre sur la page Politique de confidentialité"
+                  >Politique de confientialité</a
+                >
+              </p>
+              <p>
+                <a href="" aria-label="Se rendre sur la page Cookies"
+                  >Cookies</a
+                >
+              </p>
+            </div>
+            <div class="col-lg-4">
+              <i class="fas fa-home"></i>
+              <h6>Orinoco</h6>
+              <p>
+                <a href="" aria-label="Se rendre sur la page Entreprise"
+                  >Entreprise</a
+                >
+              </p>
+              <p>
+                <a href="" aria-label="Se rendre sur la page Développeurs"
+                  >Développeurs</a
+                >
+              </p>
+              <p>
+                <a href="" aria-label="Se rendre sur la page À propos"
+                  >À propos</a
+                >
+              </p>
+              <p>
+                <a href="" aria-label="Se rendre sur la page API ">API</a>
+              </p>
+            </div>
+            <div class="col-lg-4">
+              <i class="fas fa-question"></i>
+              <h6>Support</h6>
+              <p>
+                <a
+                  href="mailto:support@orinoco.fr?subject=Sujet&body=Bonjour,"
+                  aria-label="Nous contacter par e-mail"
+                  >Nous contacter</a
+                ><br />
+                <span> support@orinoco.fr </span>
+              </p>
+              <p>
+                <a
+                  href="tel:+33606060606"
+                  aria-label="Nous contacter par téléphone"
+                  >Support téléphonique</a
+                ><br />
+                <span> +33.6.06.06.06.06 </span>
+              </p>
+            </div>
+          </article>
+          <article class="col-lg-12 footer__copyright">
+            <img src="/public/img/favicon.png" alt="Logo de Orinoco" />
+            <p>
+              <span> © 2020 Orinoco, Inc. </span>
+            </p>
+          </article>
+        </footer>
+      </div>
+    </main>
+    <!--Scripts Orinoco-->
+    <script src="../js/orderConfirmation.js"></script>
+  </body>
 </html>
