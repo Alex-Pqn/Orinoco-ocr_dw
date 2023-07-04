@@ -5,7 +5,7 @@ const furnitureSchema = mongoose.Schema({
   price: { type: Number, required: true },
   description: { type: String, required: true },
   varnish: { type: [String], required: true },
-  imageUrl: { type: String, required: true }
+  imageUrl: { type: String, required: true },
 });
 
 module.exports = mongoose.model('Furniture', furnitureSchema);

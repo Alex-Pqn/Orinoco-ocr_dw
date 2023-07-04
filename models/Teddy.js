@@ -5,7 +5,7 @@ const teddySchema = mongoose.Schema({
   price: { type: Number, required: true },
   description: { type: String, required: true },
   colors: { type: [String], required: true },
-  imageUrl: { type: String, required: true }
+  imageUrl: { type: String, required: true },
 });
 
 module.exports = mongoose.model('Teddy', teddySchema);
