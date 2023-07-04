@@ -6,7 +6,7 @@
 - Requête GET afin de récupérer les données de l'API
 - Possibilité de mettre dans son panier d'achat un appareil photo personnalisable
 - Stockage persistant des données dans le localStorage
-- Suppression d'un ou de tous les appareils dans le panier d'achat et formulaire de validation de commande (avec validation des données) avec des événements Javascript
+- Suppression d'un ou de tous les appareils dans le panier d'achat et formulaire de validation de commande avec des événements Javascript et la validation des données
 - Requête POST afin d'envoyer le panier d'achat et recevoir en retour le numéro de commande unique à afficher au client
 - Architecture des dossiers et fichiers respectée
 - Utilisation de Sass et préfixage du CSS
