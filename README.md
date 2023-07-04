@@ -1,5 +1,5 @@
 ## Construire un site e-commerce - Orinoco
-### OpenClassrooms "Développeur Web"
+### P5 - OpenClassrooms "Développeur Web"
 - Site web créé en HTML5/CSS3 & Javascript
 - Communication avec une API REST existante
 - Réalisation d'un [plan de tests unitaires](/Plans/Plan%20de%20tests%20unitaires.pdf)
