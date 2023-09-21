@@ -22,7 +22,7 @@ Ensuitez, vous planifierez une suite de tests unitaires pour couvrir au minimum 
 - Formulaire de validation de commande avec des événements Javascript et la validation des données
 - Requête POST afin d'envoyer le panier d'achat et recevoir en retour le numéro de commande unique
 - Architecture des dossiers et fichiers respectée
-- Utilisation de Sass et préfixage du CSS
+- Utilisation de Sass et de la méthodologie BEM. Préfixage du CSS
 - Responsive
 - Accessibilité appliquée
 
