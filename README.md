@@ -1,4 +1,4 @@
-![Orinoco Icon](/public/img/Orinoco%20logo.jpg)
+![Orinoco Icon](/public/img/Orinoco%20logo%205.jpg) ![Orinoco Icon](/public/img/Orinoco%20logo.jpg) ![Orinoco Icon](/public/img/Orinoco%20logo%203.jpg) ![Orinoco Icon](/public/img/Orinoco%20logo%202.jpg) ![Orinoco Icon](/public/img/Orinoco%20logo%204.jpg)
 
 ## Construire un site e-commerce - Orinoco
 ### P5 - OpenClassrooms "Développeur Web"
