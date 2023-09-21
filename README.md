@@ -34,7 +34,8 @@ Ensuitez, vous planifierez une suite de tests unitaires pour couvrir au minimum 
 
 You will need to have Node and `npm` installed locally on your machine.
 
-## Project setup
+---
+
 ### Install
 ```
 npm install
