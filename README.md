@@ -34,21 +34,32 @@ Ensuitez, vous planifierez une suite de tests unitaires pour couvrir au minimum 
 
 You will need to have Node and `npm` installed locally on your machine.
 
-### Install ###
+## Project setup
+### Install
+```
+npm install
+```
 
-1. Clone this repo. 
-2. From within the project folder, run `npm install`. 
-3. You can then run the server with `node server`. 
+### Start Server
+The API should run on `localhost` with default port `3000`. If the server runs on another port for any reason, this is printed to the console when the server starts, e.g. `Listening on port 3001`.
+```
+npm run start
+```
 
-#### The server should run on `localhost` with default port `3000`. 
-If the server runs on another port for any reason, this is printed to the console when the server starts, e.g. `Listening on port 3001`.
+### Start App
+Open the [index.html](/index.html) file in your browser or use an extension to start a local server on this file.
 
-For an optimal start-up, run the scripts that are with ("sass" and "prefix")
-sass script : "npm install sass -g"
-prefix script : "npm install autoprefixer postcss postcss-cli -g"
+### Compiles sass
+Please install sass before `npm install sass -g`
+```
+npm run sass
+```
 
-### Start ###
-"node server", "run sass" and "run prefix"
+### Prefix css
+Please install autoprefixer and postcss before `npm install autoprefixer postcss postcss-cli -g`
+```
+npm run prefix
+```
 
 ---
 

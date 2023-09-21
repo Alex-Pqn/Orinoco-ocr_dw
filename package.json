@@ -4,18 +4,16 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start": "node server",
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed",
     "prefix": "postcss --watch ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.8",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.3.8",
-    "mongoose-unique-validator": "^2.0.2",
     "sass": "^1.26.9",
     "uuid": "^3.3.2"
   }
