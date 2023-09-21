@@ -1,3 +1,5 @@
+![Orinoco Icon](/public/img/Orinoco%20logo.jpg)
+
 ## Construire un site e-commerce - Orinoco
 ### P5 - OpenClassrooms "Développeur Web"
 #### Contexte du projet
@@ -34,11 +36,12 @@ You will need to have Node and `npm` installed locally on your machine.
 
 ### Install ###
 
-Clone this repo. From within the project folder, run `npm install`. You 
-can then run the server with `node server`. 
-The server should run on `localhost` with default port `3000`. If the
-server runs on another port for any reason, this is printed to the
-console when the server starts, e.g. `Listening on port 3001`.
+1. Clone this repo. 
+2. From within the project folder, run `npm install`. 
+3. You can then run the server with `node server`. 
+
+#### The server should run on `localhost` with default port `3000`. 
+If the server runs on another port for any reason, this is printed to the console when the server starts, e.g. `Listening on port 3001`.
 
 For an optimal start-up, run the scripts that are with ("sass" and "prefix")
 sass script : "npm install sass -g"
@@ -48,6 +51,8 @@ prefix script : "npm install autoprefixer postcss postcss-cli -g"
 "node server", "run sass" and "run prefix"
 
 ---
+
+### Preview
 
 ![Site au complet](/public/img/Orinoco.png)
 <br/>
