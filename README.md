@@ -28,13 +28,11 @@ Ensuitez, vous planifierez une suite de tests unitaires pour couvrir au minimum 
 - Responsive
 - Accessibilité appliquée
 
----
-
-### Prerequisites ###
+## Prerequisites
 
 You will need to have Node and `npm` installed locally on your machine.
 
----
+## Project setup
 
 ### Install
 ```
@@ -48,7 +46,7 @@ npm run start
 ```
 
 ### Start App
-Clone the project then open the [index.html](/index.html) file in your browser or use an extension to start a local server on this file.
+Open the [index.html](/index.html) file in your browser or use an extension to start a local server on this file.
 
 ### Compiles sass
 Please install sass before `npm install sass -g`
@@ -62,9 +60,7 @@ Please install autoprefixer and postcss before `npm install autoprefixer postcss
 npm run prefix
 ```
 
----
-
-### Preview
+## Preview
 
 ![Site au complet](/public/img/Orinoco.png)
 <br/>
