@@ -15,7 +15,7 @@ L’application web sera composée de 4 pages :
 
 Ensuitez, vous planifierez une suite de tests unitaires pour couvrir au minimum 80 % de la base de code pour le front-end. Vous devrez formaliser un plan pour atteindre ce résultat, sans obligation d’écrire ces tests. Expliquez quelles lignes seront testées, et quels “test cases” seront envisagés.
 
-#### Objectifs
+#### Objectifs réalisés
 - Site web créé en HTML5/CSS3 & Javascript
 - Communication avec une API REST existante
 - Réalisation d'un [plan de tests unitaires](/Plans/Plan%20de%20tests%20unitaires.pdf)
